@@ -4,7 +4,7 @@ let baseUrl = env.BASE_URL.replace(/\/$/, '');
 let iconfontVersion = ['567566_pwc3oottzol'];
 let iconfontUrl = `${baseUrl}/cdn/iconfont/alicdn/font_$key.css`;
 let codeUrl = `${baseUrl}/code`
-let indexUrl = env.VUE_APP_INDEX || "/oa/myFlow/index";
+let indexUrl = env.VUE_APP_INDEX || "/wel/index";
 
 export {
     baseUrl,

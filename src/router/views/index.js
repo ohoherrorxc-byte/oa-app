@@ -80,7 +80,7 @@ export default [{
 },{
     path: '/oa',
     component: Layout,
-    redirect: '/oa/myFlow/index',
+    redirect: '/wel/index',
   },
   {
     path: '/salesContractDetail',

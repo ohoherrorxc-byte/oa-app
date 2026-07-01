@@ -6,7 +6,7 @@
       <h1>500</h1>
       <div class="desc">抱歉，服务器出错了</div>
       <div class="actions">
-        <router-link :to="{path:'/'}">
+        <router-link :to="{path:'/wel/index'}">
           <el-button type="primary">返回首页</el-button>
         </router-link>
       </div>

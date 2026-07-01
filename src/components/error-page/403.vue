@@ -6,7 +6,7 @@
       <h1>403</h1>
       <div class="desc">抱歉，你无权访问该页面</div>
       <div class="actions">
-        <router-link :to="{path:'/'}">
+        <router-link :to="{path:'/wel/index'}">
           <el-button type="primary">返回首页</el-button>
         </router-link>
       </div>

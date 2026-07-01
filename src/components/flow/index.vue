@@ -1127,13 +1127,13 @@ export default {
           menuTagRemove(this.$route.path, this.tagList, this);
           if (this.$route.query.isHome) {
             //关闭当前页tag
-            this.$router.push("/oa/myFlow/index?reflesh=true");
+            this.$router.push("/wel/index?reflesh=true");
           } else if (this.$route.query.isQiWei) {
             //关闭当前页tag
             window.location.href(`${env.QIWEI_URL}?reflush=1`);
-            this.$router.push("/oa/myFlow/index?reflesh=true");
+            this.$router.push("/wel/index?reflesh=true");
           } else {
-            this.$router.push("/oa/myFlow/index?reflesh=true");
+            this.$router.push("/wel/index?reflesh=true");
           }
         }
       }
@@ -1245,7 +1245,7 @@ export default {
             }
           } else {
             menuTagRemove(this.$route.path, this.tagList, this);
-            this.$router.push("/oa/myFlow/index?reflesh=true");
+            this.$router.push("/wel/index?reflesh=true");
           }
         } else {
           this.disabledSubmit = false;
