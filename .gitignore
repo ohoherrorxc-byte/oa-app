@@ -1,5 +1,66 @@
-node_modules
-dist
-.env
-public
+# Dependencies
+node_modules/
 
+# Build output
+dist/
+build/
+coverage/
+
+# Static assets
+public/
+
+# ───── 环境与本地配置（任何含密钥的文件都不入库） ─────
+.env
+.env.*
+!.env.example
+*.env.local
+*.env.development
+*.env.production
+config.local.*
+config.*.local.*
+*.local.js
+*.local.json
+
+# CI/CD（gitlab-ci 在 GitLab 上配，nginx 凭据不入库）
+# —— 任何位置、任何命名形式的 gitlab-ci 配置都不入库 ——
+**/gitlab-ci/
+**/gitlab-ci/**
+**/.gitlab-ci.yml
+**/.gitlab-ci.yaml
+**/gitlab-ci.yml
+**/gitlab-ci.yaml
+*.gitlab-ci.yml
+*.gitlab-ci.yaml
+src/nginx
+**/nginx
+**/nginx/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# Misc
+*.pid
+*.seed
+*.pid.lock
+.history/
