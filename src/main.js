@@ -82,6 +82,7 @@ Vue.use(draggable)
 // Vue.use(FcDesigner)
 
 window.axios = axios
+Vue.prototype.$axios = axios
 // Vue.use(SkuForm);
 // Vue.use(Vant);
 // 注册全局crud驱动
@@ -143,7 +144,7 @@ Vue.component('thirdRegister', thirdRegister);
 // avueUeditor 统一走异步组件：仅当某个 avue-form 列配了 type:'ueditor' 真正渲染时才下载
 // avue-plugin-ueditor 内部依赖 wangeditor (~157KB),不能静态 import 否则 wangeditor 必进 vendors
 // 桌面/手机都用异步路径,行为完全一致,只是省掉了 wangeditor 的首屏加载
-Vue.component('avueUeditor', () => import('avue-plugin-ueditor'))
+// Vue.component('avueUeditor', () => import('avue-plugin-ueditor'))
 Vue.component('SearchForm', searchForm);
 Vue.component('TableForm', tableForm);
 // 加载相关url地址
