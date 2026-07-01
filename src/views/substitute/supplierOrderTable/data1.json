@@ -1,0 +1,208 @@
+ // {
+    //     "arrears": 0,
+    //     "id": 1,
+    //     "2026-01": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "0",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "0"
+    //     },
+    //     "2026-02": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "72",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "72"
+    //     },
+    //     "2026-03": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "104",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "176"
+    //     },
+    //     "2026-04": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "1200",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "1376"
+    //     },
+    //     "2026-05": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "1800",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "3176"
+    //     },
+    //     "needDate": null,
+    //     "needNumber": 4000,
+    //     "partsName": "7870-F520SR网联高配主机",
+    //     "partsNumber": "27162005",
+    //     "percentagePaid": 38,
+    //     "supplierName": "江苏联成开拓集团有限公司",
+    //     "supplierNo": "GYS-2022100001",
+    //     "unPaidPart": null
+    // },
+    // {
+    //     "arrears": 0,
+    //     "id": 1,
+    //     "2026-01": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "0",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "0"
+    //     },
+    //     "2026-02": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "13",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "13"
+    //     },
+    //     "2026-03": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "17",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "30"
+    //     },
+    //     "2026-04": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "800",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "830"
+    //     },
+    //     "2026-05": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "1200",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "2030"
+    //     },
+    //     "needDate": null,
+    //     "needNumber": 4000,
+    //     "partsName": "7870-F520SR网联低配主机",
+    //     "partsNumber": "27159858",
+    //     "percentagePaid": 38,
+    //     "supplierName": "江苏联成开拓集团有限公司",
+    //     "supplierNo": "GYS-2022100001",
+    //     "unPaidPart": null
+    // },
+    // {
+    //     "arrears": 0,
+    //     "id": 1,
+    //     "2026-01": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "0",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "0"
+    //     },
+    //     "2026-02": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "93",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "93"
+    //     },
+    //     "2026-03": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "95",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "188"
+    //     },
+    //     "2026-04": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "1200",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "1388"
+    //     },
+    //     "2026-05": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "1800",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "3188"
+    //     },
+    //     "needDate": null,
+    //     "needNumber": 4000,
+    //     "partsName": "F520SR_IN_15.6_显示屏",
+    //     "partsNumber": "27156542",
+    //     "percentagePaid": 38,
+    //     "supplierName": "江苏联成开拓集团有限公司",
+    //     "supplierNo": "GYS-2022100001",
+    //     "unPaidPart": null
+    // },
+    // {
+    //     "arrears": 0,
+    //     "id": 1,
+    //     "2026-01": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "80",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "80"
+    //     },
+    //     "2026-02": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "0"
+    //     },
+    //     "2026-03": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "0"
+    //     },
+    //     "2026-04": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "0"
+    //     },
+    //     "2026-05": {
+    //         "orderTotal": "",
+    //         "needDate": "",
+    //         "needNumber": "",
+    //         "percentagePaid": "0",
+    //         "stockInNumber": "0",
+    //         "arrears": "0"
+    //     },
+    //     "needDate": null,
+    //     "needNumber": 4000,
+    //     "partsName": "EH32_X9X10 8015车机",
+    //     "partsNumber": "12099063",
+    //     "percentagePaid": 38,
+    //     "supplierName": "江苏联成开拓集团有限公司",
+    //     "supplierNo": "GYS-2022100001",
+    //     "unPaidPart": null
+    // },

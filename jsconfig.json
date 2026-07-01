@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",     // 基础路径
+    "paths": {
+      "@/*": ["src/*"]  // 关键配置：将 @/ 映射到 src/ 目录
+      // 如果您有其他自定义别名，也在这里添加，例如：
+      // "components/*": ["src/components/*"],
+      // "assets/*": ["src/assets/*"]
+    },
+    "moduleResolution": "node", // 使用 Node.js 的模块解析策略
+    "target": "es5",
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true
+  },
+  // 包含哪些文件进行智能感知（提供代码提示和跳转）
+  "include": [
+    "src/**/*.js",
+    "src/**/*.vue",
+    "src/**/*.json"
+  ],
+  // 排除哪些目录，避免 VS Code 索引不必要的文件，提升性能
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/node_modules/*"
+  ]
+}

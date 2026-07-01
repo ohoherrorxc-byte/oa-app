@@ -1,0 +1,24 @@
+//由于saber的avue不好更新，这里放avue后续修正的一些样式，以及需要override的样式
+
+/*
+commit 633f89f8157567b978ecf72f674701bcb6207615
+Author: smallwei
+Date: 2022/5/30 11:19
+
+fix:dialogForm menuBtn params
+*/
+.avue--detail {
+  .el-col {
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid #ebeef5;
+    border-right: 1px solid #ebeef5;
+  }
+}
+.el-select-dropdown {
+  max-height: 300px;
+  // width: 100%; /* 设置下拉菜单的宽度为100% */
+  max-width: 100vw; /* 最大宽度不超过视口宽度 */
+  overflow-y: auto; /* 超出部分可滚动 */
+}
+

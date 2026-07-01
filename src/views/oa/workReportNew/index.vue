@@ -1,0 +1,2125 @@
+<template>
+  <div class="work-week-report-from-image">
+<button class="save-table-btn" type="button" @click="saveTableData">保存</button>
+<button class="export-pdf-btn" type="button" @click="exportPageToPdf">导出PDF</button>
+  <div class="sheet">
+    <div class="project-wrap">
+      <div class="project-title">重大项目进展</div>
+      <table class="project" aria-label="重大项目进展表">
+        <thead>
+          <tr>
+            <th>项目名称</th>
+            <th>项目目标</th>
+            <th>近期进展</th>
+            <th>存在风险</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" class="cell-input" value="海外智能座舱平台升级" /></td>
+            <td><input type="text" class="cell-input" value="完成多语言版本统一发布，提升海外交付效率" /></td>
+            <td><input type="text" class="cell-input" value="已完成核心模块联调，正在进行灰度发布" /></td>
+            <td><input type="text" class="cell-input" value="海外网络环境差异导致升级耗时波动" /></td>
+            <td><input type="text" class="cell-input" value="推进中" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="cell-input" value="数据中台二期建设" /></td>
+            <td><input type="text" class="cell-input" value="打通销售与项目数据链路，实现统一指标看板" /></td>
+            <td><input type="text" class="cell-input" value="数据模型已上线，报表接口完成80%" /></td>
+            <td><input type="text" class="cell-input" value="历史数据口径不一致，清洗周期偏长" /></td>
+            <td><input type="text" class="cell-input" value="正常" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="cell-input" value="车机软件性能优化专项" /></td>
+            <td><input type="text" class="cell-input" value="启动时间缩短15%，内存占用下降10%" /></td>
+            <td><input type="text" class="cell-input" value="已完成首轮性能压测并输出优化清单" /></td>
+            <td><input type="text" class="cell-input" value="第三方组件升级窗口较短" /></td>
+            <td><input type="text" class="cell-input" value="关注" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="cell-input" value="质量管理体系认证复审" /></td>
+            <td><input type="text" class="cell-input" value="通过年度复审并完成问题闭环" /></td>
+            <td><input type="text" class="cell-input" value="内部预审完成，整改项已关闭90%" /></td>
+            <td><input type="text" class="cell-input" value="关键岗位文档更新进度需加快" /></td>
+            <td><input type="text" class="cell-input" value="可控" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sheet-title">
+      <div class="left">现金流量表</div>
+      <div class="unit">货币单位：人民币（万元）</div>
+    </div>
+
+    <table aria-label="现金流量表">
+      <colgroup>
+        <col />
+        <col />
+        <col />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>项目</th>
+          <th>本年累计金额</th>
+          <th>本期金额</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="section">
+          <td><input type="text" class="cell-input" value="一、经营活动产生的现金流量：" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="销售商品、提供劳务收到的现金" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="34,985.55" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="31,652.30" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="收到税费返还" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="1,962.89" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="1,461.92" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="收到其他与经营活动有关的现金" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="184.31" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="195.59" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="购买商品、接受劳务支付的现金" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="28,300.79" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="27,734.77" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="支付给职工以及为职工支付的现金" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="4,056.25" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="3,582.01" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="支付的各项税费" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="606.81" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="433.22" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="支付其他与经营活动有关的现金" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="2,522.71" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="963.73" /></td>
+        </tr>
+        <tr class="bold">
+          <td><input type="text" class="cell-input" value="经营活动产生的现金流量净额" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="1,646.19" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="596.08" /></td>
+        </tr>
+        <tr class="section">
+          <td><input type="text" class="cell-input" value="二、投资活动产生的现金流量：" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="购建固定资产、无形资产和其他长期资产支付的现金" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="244.88" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="197.02" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="投资活动产生的现金流量净额" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="-244.88" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="-197.02" /></td>
+        </tr>
+        <tr class="section">
+          <td><input type="text" class="cell-input" value="三、筹资活动产生的现金流量：" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="分配股利、利润或偿付利息支付的现金" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="1,182.17" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="390.45" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="支付其他与筹资活动有关的现金" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="258.26" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="160.04" /></td>
+        </tr>
+        <tr class="bold">
+          <td><input type="text" class="cell-input" value="筹资活动产生的现金流量净额" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="-1,440.43" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="-550.49" /></td>
+        </tr>
+        <tr class="bold">
+          <td><input type="text" class="cell-input" value="四、汇率变动对现金及现金等价物的影响" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="35.54" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="16.82" /></td>
+        </tr>
+        <tr class="bold">
+          <td><input type="text" class="cell-input" value="五、现金及现金等价物净增加额" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="-3.58" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="-134.61" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="cell-input" value="加：期初现金及现金等价物余额" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="7,247.30" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="7,381.91" /></td>
+        </tr>
+        <tr class="bold">
+          <td><input type="text" class="cell-input" value="六、期末现金及现金等价物余额" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="7,243.72" /></td>
+          <td class="amount"><input type="text" class="cell-input" value="7,247.30" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sales-wrap">
+      <div class="sales-title">
+        <div>销售情况</div>
+        <div class="unit">货币单位：人民币（万元）</div>
+      </div>
+      <table class="sales" aria-label="销售情况表">
+        <colgroup>
+          <col style="width: 32%">
+          <col style="width: 16%">
+          <col style="width: 20%">
+          <col style="width: 14%">
+          <col style="width: 12%">
+          <col style="width: 6%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th rowspan="2">序号</th>
+            <th rowspan="2">产品大类</th>
+            <th rowspan="2">主要产品</th>
+            <th rowspan="2">2026年 全年计划</th>
+            <th>今年至今</th>
+            <th>本周</th>
+            <th>全年计划完成率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" class="cell-input" value="一" /></td>
+            <td><input type="text" class="cell-input" value="软件许可" /></td>
+            <td><textarea class="cell-textarea" rows="2">iSmart网联服务</textarea></td>
+            <td class="num"><input type="text" class="cell-input" value="13,529" /></td>
+            <td class="num"><input type="text" class="cell-input" value="8,914" /></td>
+            <td class="num"><input type="text" class="cell-input" value="8,914" /></td>
+            <td class="num"><input type="text" class="cell-input" value="66%" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="cell-input" value="二" /></td>
+            <td><input type="text" class="cell-input" value="智能硬件" /></td>
+            <td><input type="text" class="cell-input" value="娱乐主机、屏幕、TBOX等智能硬件" /></td>
+            <td class="num"><input type="text" class="cell-input" value="21,026" /></td>
+            <td class="num"><input type="text" class="cell-input" value="20,709" /></td>
+            <td class="num"><input type="text" class="cell-input" value="8,914" /></td>
+            <td class="num"><input type="text" class="cell-input" value="98%" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="cell-input" value="三" /></td>
+            <td><input type="text" class="cell-input" value="软件开发" /></td>
+            <td><input type="text" class="cell-input" value="车机软件开发" /></td>
+            <td class="num"><input type="text" class="cell-input" value="6,445" /></td>
+            <td class="num"><input type="text" class="cell-input" value="3,054" /></td>
+            <td class="num"><input type="text" class="cell-input" value="8,914" /></td>
+            <td class="num"><input type="text" class="cell-input" value="47%" /></td>
+          </tr>
+          <tr class="total">
+            <td><input type="text" class="cell-input" value="" /></td>
+            <td><input type="text" class="cell-input" value="合计" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+            <td class="num"><input type="text" class="cell-input" value="41,040" /></td>
+            <td class="num"><input type="text" class="cell-input" value="32,677" /></td>
+            <td class="num"><input type="text" class="cell-input" value="8,914" /></td>
+            <td class="num"><input type="text" class="cell-input" value="80%" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="customer-wrap">
+      <div class="customer-title">
+        <div>主要客户销售进展情况</div>
+        <div class="customer-title-right">
+          <div class="unit">货币单位：人民币（万元）</div>
+        </div>
+      </div>
+      <div class="customer-table-wrap">
+        <div class="customer-row-tools">
+          <button type="button" class="row-tool-btn" data-customer-row-action="add" aria-label="主要客户销售进展情况新增一行">+</button>
+          <button type="button" class="row-tool-btn" data-customer-row-action="remove" aria-label="主要客户销售进展情况删除一行">-</button>
+        </div>
+        <table class="customer" aria-label="主要客户销售进展情况">
+        <colgroup>
+          <col style="width: 10%">
+          <col style="width: 22%">
+          <col style="width: 22%">
+          <col style="width: 15%">
+          <col style="width: 15%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>主要客户</th>
+            <th>今年至今</th>
+            <th>完成比例</th>
+            <th>情况说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num"><input type="text" class="cell-input" value="1" /></td>
+            <td><input type="text" class="cell-input" value="JSW/MGI" /></td>
+            <td class="num"><input type="text" class="cell-input" value="18,062" /></td>
+            <td class="num"><input type="text" class="cell-input" value="80%" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+          </tr>
+          <tr>
+            <td class="num"><input type="text" class="cell-input" value="2" /></td>
+            <td><input type="text" class="cell-input" value="SAIC-CP泰国" /></td>
+            <td class="num"><input type="text" class="cell-input" value="3,261" /></td>
+            <td class="num"><input type="text" class="cell-input" value="93%" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+          </tr>
+          <tr>
+            <td class="num"><input type="text" class="cell-input" value="3" /></td>
+            <td><input type="text" class="cell-input" value="SAIC Motor Europe" /></td>
+            <td class="num"><input type="text" class="cell-input" value="4,456" /></td>
+            <td class="num"><input type="text" class="cell-input" value="74%" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+          </tr>
+          <tr>
+            <td class="num"><input type="text" class="cell-input" value="4" /></td>
+            <td><input type="text" class="cell-input" value="MG UK" /></td>
+            <td class="num"><input type="text" class="cell-input" value="3,030" /></td>
+            <td class="num"><input type="text" class="cell-input" value="76%" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+          </tr>
+          <tr>
+            <td class="num"><input type="text" class="cell-input" value="5" /></td>
+            <td><input type="text" class="cell-input" value="上汽大通" /></td>
+            <td class="num"><input type="text" class="cell-input" value="950" /></td>
+            <td class="num"><input type="text" class="cell-input" value="95%" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+          </tr>
+          <tr>
+            <td class="num"><input type="text" class="cell-input" value="6" /></td>
+            <td><input type="text" class="cell-input" value="上汽乘用车/研发总院" /></td>
+            <td class="num"><input type="text" class="cell-input" value="580" /></td>
+            <td class="num"><input type="text" class="cell-input" value="15%" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+          </tr>
+          <tr>
+            <td class="num"><input type="text" class="cell-input" value="7" /></td>
+            <td><input type="text" class="cell-input" value="上汽乘用车/研发总院" /></td>
+            <td class="num"><input type="text" class="cell-input" value="580" /></td>
+            <td class="num"><input type="text" class="cell-input" value="15%" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+          </tr>
+          <tr>
+            <td class="num"><input type="text" class="cell-input" value="8" /></td>
+            <td><input type="text" class="cell-input" value="上汽乘用车/研发总院" /></td>
+            <td class="num"><input type="text" class="cell-input" value="580" /></td>
+            <td class="num"><input type="text" class="cell-input" value="15%" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+          </tr>
+          <tr>
+            <td class="num"><input type="text" class="cell-input" value="9" /></td>
+            <td><input type="text" class="cell-input" value="上汽乘用车/研发总院" /></td>
+            <td class="num"><input type="text" class="cell-input" value="580" /></td>
+            <td class="num"><input type="text" class="cell-input" value="15%" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+          </tr>
+          <tr>
+            <td class="num"><input type="text" class="cell-input" value="10" /></td>
+            <td><input type="text" class="cell-input" value="上汽乘用车/研发总院" /></td>
+            <td class="num"><input type="text" class="cell-input" value="580" /></td>
+            <td class="num"><input type="text" class="cell-input" value="15%" /></td>
+            <td><input type="text" class="cell-input" value="" /></td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="hr-wrap">
+      <div class="hr-title">人力资源报告</div>
+      <div class="hr-panels">
+        <div class="hr-left">
+          <table class="hr" aria-label="人力资源报告表">
+            <colgroup>
+              <col style="width: 9%">
+              <col style="width: 26%">
+              <col style="width: 12%">
+              <col style="width: 11%">
+              <col style="width: 11%">
+              <col style="width: 11%">
+              <col style="width: 11%">
+              <col style="width: 9%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th rowspan="3">序号</th>
+                <th rowspan="3">部门名称</th>
+                <th colspan="1">2026年实际</th>
+                <th class="group" colspan="4">2026年人员变化情况（+/-）</th>
+                <th class="group" colspan="1">2026年预计</th>
+              </tr>
+              <tr>
+                <th rowspan="2">人数</th>
+                <th class="group">一季度</th>
+                <th class="group">二季度</th>
+                <th class="group">三季度</th>
+                <th class="group">四季度</th>
+                <th class="group" rowspan="2">年底人数</th>
+              </tr>
+              <tr>
+                <th class="group">实际</th>
+                <th class="group">实际</th>
+                <th class="group">计划</th>
+                <th class="group">计划</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="1" /></td>
+                <td><input type="text" class="cell-input" value="管理层" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="2" /></td>
+                <td><input type="text" class="cell-input" value="项目组" /></td>
+                <td class="num"><input type="text" class="cell-input" value="8" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="8" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="3" /></td>
+                <td><input type="text" class="cell-input" value="测试组" /></td>
+                <td class="num"><input type="text" class="cell-input" value="6" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="6" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="4" /></td>
+                <td><input type="text" class="cell-input" value="产品组" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="5" /></td>
+                <td><input type="text" class="cell-input" value="系统组" /></td>
+                <td class="num"><input type="text" class="cell-input" value="11" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="11" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="6" /></td>
+                <td><input type="text" class="cell-input" value="产品中台及开发组" /></td>
+                <td class="num"><input type="text" class="cell-input" value="7" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="7" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="7" /></td>
+                <td><input type="text" class="cell-input" value="集成及体系认证组" /></td>
+                <td class="num"><input type="text" class="cell-input" value="2" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="2" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="8" /></td>
+                <td><input type="text" class="cell-input" value="综管组" /></td>
+                <td class="num"><input type="text" class="cell-input" value="3" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="" /></td>
+                <td class="num"><input type="text" class="cell-input" value="3" /></td>
+              </tr>
+              <tr class="total">
+                <td colspan="2"><input type="text" class="cell-input" value="合计" /></td>
+                <td class="num"><input type="text" class="cell-input" value="43" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+                <td class="num"><input type="text" class="cell-input" value="43" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hr-right is-hidden">
+          <table class="hr-side" aria-label="人力资源指标汇总">
+            <thead>
+              <tr>
+                <th>序号</th>
+                <th>指标</th>
+                <th>2026年预算</th>
+                <th>2026年实际</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="total">
+                <td><input type="text" class="cell-input" value="一" /></td>
+                <td><input type="text" class="cell-input" value="全部人员期末人数" /></td>
+                <td class="num"><input type="text" class="cell-input" value="43" /></td>
+                <td class="num"><input type="text" class="cell-input" value="43" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="1" /></td>
+                <td><input type="text" class="cell-input" value="其中：职工期末人数" /></td>
+                <td class="num"><input type="text" class="cell-input" value="43" /></td>
+                <td class="num"><input type="text" class="cell-input" value="43" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="2" /></td>
+                <td><input type="text" class="cell-input" value="劳务派遣人员期末人数" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="3" /></td>
+                <td><input type="text" class="cell-input" value="其他从业人员期末人数" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+              </tr>
+              <tr class="total">
+                <td><input type="text" class="cell-input" value="二" /></td>
+                <td><input type="text" class="cell-input" value="全部人员平均人数" /></td>
+                <td class="num"><input type="text" class="cell-input" value="43" /></td>
+                <td class="num"><input type="text" class="cell-input" value="43" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="1" /></td>
+                <td><input type="text" class="cell-input" value="其中：职工平均人数" /></td>
+                <td class="num"><input type="text" class="cell-input" value="43" /></td>
+                <td class="num"><input type="text" class="cell-input" value="43" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="2" /></td>
+                <td><input type="text" class="cell-input" value="劳务派遣人员平均人数" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+              </tr>
+              <tr>
+                <td class="num"><input type="text" class="cell-input" value="3" /></td>
+                <td><input type="text" class="cell-input" value="其他从业人员平均人数" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+                <td class="num"><input type="text" class="cell-input" value="0" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="logistics-wrap">
+      <div class="logistics-title">物料物流</div>
+      <div class="logistics-grid-2">
+        <div>
+          <div class="sub-title">订单统计</div>
+          <table class="logistics" aria-label="物料物流-订单统计">
+            <thead>
+              <tr>
+                <th>维度</th>
+                <th>数量</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><input type="text" class="cell-input" value="客户订单（本周新增）" /></td><td class="num"><input type="text" class="cell-input" value="128" /></td></tr>
+              <tr><td><input type="text" class="cell-input" value="客户订单（本周关闭）" /></td><td class="num"><input type="text" class="cell-input" value="117" /></td></tr>
+              <tr><td><input type="text" class="cell-input" value="供应商订单（本周下发）" /></td><td class="num"><input type="text" class="cell-input" value="96" /></td></tr>
+              <tr><td><input type="text" class="cell-input" value="供应商订单（本周到货）" /></td><td class="num"><input type="text" class="cell-input" value="88" /></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="sub-title">交付计划</div>
+          <table class="logistics" aria-label="物料物流-交付计划">
+            <thead>
+              <tr>
+                <th>维度</th>
+                <th>数量</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><input type="text" class="cell-input" value="客户交付计划（本月）" /></td><td class="num"><input type="text" class="cell-input" value="42" /></td></tr>
+              <tr><td><input type="text" class="cell-input" value="客户交付计划（已完成）" /></td><td class="num"><input type="text" class="cell-input" value="31" /></td></tr>
+              <tr><td><input type="text" class="cell-input" value="供应商交付计划（本月）" /></td><td class="num"><input type="text" class="cell-input" value="57" /></td></tr>
+              <tr><td><input type="text" class="cell-input" value="供应商交付计划（已完成）" /></td><td class="num"><input type="text" class="cell-input" value="45" /></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="logistics-grid-3">
+        <div>
+          <div class="sub-title">预测统计</div>
+          <table class="logistics" aria-label="物料物流-预测统计">
+            <thead><tr><th>维度</th><th>数量</th></tr></thead>
+            <tbody>
+              <tr><td><input type="text" class="cell-input" value="滚动预测覆盖周数" /></td><td class="num"><input type="text" class="cell-input" value="12" /></td></tr>
+              <tr><td><input type="text" class="cell-input" value="重点物料缺口" /></td><td class="num"><input type="text" class="cell-input" value="3" /></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="sub-title">库存统计</div>
+          <table class="logistics" aria-label="物料物流-库存统计">
+            <thead><tr><th>维度</th><th>数量</th></tr></thead>
+            <tbody>
+              <tr><td><input type="text" class="cell-input" value="在库物料SKU" /></td><td class="num"><input type="text" class="cell-input" value="426" /></td></tr>
+              <tr><td><input type="text" class="cell-input" value="低库存预警SKU" /></td><td class="num"><input type="text" class="cell-input" value="17" /></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="sim-wrap">
+      <div class="sim-title">SIM卡管理</div>
+      <table class="sim" aria-label="SIM卡管理">
+        <thead>
+          <tr>
+            <th>指标</th>
+            <th>数值</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" class="cell-input" value="月度账单（CNY）" /></td>
+            <td><input type="text" class="cell-input" value="¥ 486,200" /></td>
+            <td><input type="text" class="cell-input" value="较上月下降 3.1%" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="cell-input" value="本周状态" /></td>
+            <td><input type="text" class="cell-input" value="整体稳定" /></td>
+            <td><input type="text" class="cell-input" value="重点国家地区未出现大面积离线告警" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  </div>
+</template>
+
+<script>
+import request from '@/router/axios';
+
+const AUTO_SAVE_INTERVAL_MS = 5000;
+let autoSaveTimerId = null;
+
+export default {
+  name: 'WorkWeekReportFromImage',
+  methods: {
+    async saveTableData() {
+      if (typeof this._saveTableDataToApi === 'function') {
+        await this._saveTableDataToApi(false);
+      }
+    },
+    exportPageToPdf() {
+      const sheetEl = this.$el.querySelector('.sheet');
+      if (!sheetEl) return;
+      const scopeAttr = this.$el && this.$el.getAttributeNames
+        ? this.$el.getAttributeNames().find((name) => name.startsWith('data-v-'))
+        : '';
+      const scopeAttrHtml = scopeAttr ? ` ${scopeAttr}` : '';
+
+      const printNode = sheetEl.cloneNode(true);
+      const sourceFields = sheetEl.querySelectorAll('input, textarea, select');
+      const targetFields = printNode.querySelectorAll('input, textarea, select');
+
+      sourceFields.forEach((sourceField, index) => {
+        const targetField = targetFields[index];
+        if (!targetField) return;
+
+        if (sourceField.tagName === 'TEXTAREA') {
+          targetField.value = sourceField.value;
+          targetField.textContent = sourceField.value;
+          return;
+        }
+
+        if (sourceField.tagName === 'SELECT') {
+          targetField.value = sourceField.value;
+          return;
+        }
+
+        targetField.value = sourceField.value;
+        targetField.setAttribute('value', sourceField.value);
+      });
+
+      const inlineStyles = Array.from(document.querySelectorAll('style'))
+        .map((style) => style.outerHTML || '')
+        .join('\n');
+      const linkedStyles = Array.from(document.querySelectorAll('link[rel="stylesheet"]'))
+        .map((link) => link.outerHTML || '')
+        .join('\n');
+
+      const iframe = document.createElement('iframe');
+      iframe.style.position = 'fixed';
+      iframe.style.right = '0';
+      iframe.style.bottom = '0';
+      iframe.style.width = '0';
+      iframe.style.height = '0';
+      iframe.style.border = '0';
+      iframe.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(iframe);
+
+      const doc = iframe.contentWindow && iframe.contentWindow.document;
+      if (!doc) {
+        document.body.removeChild(iframe);
+        return;
+      }
+
+      const printHtml = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>工作周报导出</title>
+    ${linkedStyles}
+    ${inlineStyles}
+  </head>
+  <body>
+    <div class="work-week-report-from-image"${scopeAttrHtml}>${printNode.outerHTML}</div>
+  </body>
+</html>`;
+
+      const waitStylesReadyAndPrint = () => {
+        const win = iframe.contentWindow;
+        const frameDoc = win && win.document;
+        if (!win || !frameDoc) return;
+
+        const cssLinks = Array.from(frameDoc.querySelectorAll('link[rel="stylesheet"]'));
+        if (cssLinks.length === 0) {
+          setTimeout(() => {
+            win.focus();
+            win.print();
+          }, 120);
+          return;
+        }
+
+        let loaded = 0;
+        const finish = () => {
+          loaded += 1;
+          if (loaded < cssLinks.length) return;
+          setTimeout(() => {
+            win.focus();
+            win.print();
+          }, 120);
+        };
+
+        cssLinks.forEach((link) => {
+          link.addEventListener('load', finish, { once: true });
+          link.addEventListener('error', finish, { once: true });
+        });
+
+        // Fallback: avoid hanging if some stylesheets never fire events.
+        setTimeout(() => {
+          win.focus();
+          win.print();
+        }, 1200);
+      };
+
+      iframe.onload = waitStylesReadyAndPrint;
+      doc.open();
+      doc.write(printHtml);
+      doc.close();
+
+      const cleanup = () => {
+        if (document.body.contains(iframe)) {
+          document.body.removeChild(iframe);
+        }
+      };
+      iframe.contentWindow && iframe.contentWindow.addEventListener('afterprint', cleanup, { once: true });
+      setTimeout(cleanup, 5000);
+    }
+  },
+  async mounted() {
+    const vm = this;
+    let isSaving = false;
+    let lastSavedPayload = '';
+    const scopeAttr = this.$el && this.$el.getAttributeNames
+      ? this.$el.getAttributeNames().find((name) => name.startsWith('data-v-'))
+      : null;
+
+    function applyScopeAttr(root) {
+      if (!scopeAttr || !root || root.nodeType !== 1) return;
+      root.setAttribute(scopeAttr, '');
+      root.querySelectorAll('*').forEach((node) => {
+        node.setAttribute(scopeAttr, '');
+      });
+    }
+
+
+
+    function getCurrentWeekRange() {
+      const today = new Date();
+      const day = today.getDay();
+      const diffToMonday = today.getDate() - day + (day === 0 ? -6 : 1);
+      const monday = new Date(new Date().setDate(diffToMonday));
+      const sunday = new Date(new Date().setDate(diffToMonday + 6));
+      const formatDate = (date) => {
+        const yyyy = date.getFullYear();
+        const mm = String(date.getMonth() + 1).padStart(2, '0');
+        const dd = String(date.getDate()).padStart(2, '0');
+        return `${yyyy}-${mm}-${dd}`;
+      };
+      return {
+        startDate: formatDate(monday),
+        endDate: formatDate(sunday)
+      };
+    }
+
+    function asText(value) {
+      if (value === null || value === undefined) return '';
+      return String(value);
+    }
+
+    function firstNonNull(...values) {
+      for (let i = 0; i < values.length; i += 1) {
+        if (values[i] !== null && values[i] !== undefined) {
+          return values[i];
+        }
+      }
+      return '';
+    }
+
+    function getCellValue(row, cellIndex) {
+      if (!row || !row.cells || !row.cells[cellIndex]) return '';
+      const cell = row.cells[cellIndex];
+      const field = cell.querySelector('input, textarea, select');
+      if (!field) return '';
+      return asText(field.value).trim();
+    }
+
+    function getTableRows(ariaLabel) {
+      const table = document.querySelector(`table[aria-label="${ariaLabel}"]`);
+      if (!table || !table.tBodies || !table.tBodies[0]) return [];
+      return Array.from(table.tBodies[0].rows || []);
+    }
+
+    function collectTablePayload() {
+      const projectProgressList = getTableRows('重大项目进展表').map((row) => ({
+        projectName: getCellValue(row, 0),
+        projectGoal: getCellValue(row, 1),
+        recentProgress: getCellValue(row, 2),
+        risk: getCellValue(row, 3),
+        status: getCellValue(row, 4)
+      }));
+
+      const cashFlowList = getTableRows('现金流量表').map((row) => ({
+        item: getCellValue(row, 0),
+        currentAmount: getCellValue(row, 1),
+        previousAmount: getCellValue(row, 2)
+      }));
+
+      const salesStatusList = getTableRows('销售情况表').map((row) => ({
+        serialNo: getCellValue(row, 0),
+        productCategory: getCellValue(row, 1),
+        mainProduct: getCellValue(row, 2),
+        annualPlan2026: getCellValue(row, 3),
+        actualToDate: getCellValue(row, 4),
+        currentWeek: getCellValue(row, 5),
+        annualPlanCompletionRate: getCellValue(row, 6)
+      }));
+
+      const customerSalesProgressTop10List = getTableRows('主要客户销售进展情况').map((row) => ({
+        serialNo: getCellValue(row, 0),
+        majorCustomer: getCellValue(row, 1),
+        amountToDate2026: getCellValue(row, 2),
+        completionRate: getCellValue(row, 3),
+        note: getCellValue(row, 4)
+      }));
+
+      const humanResourceReportList = getTableRows('人力资源报告表').map((row) => ({
+        serialNo: getCellValue(row, 0),
+        departmentName: getCellValue(row, 1),
+        actualHeadcount2026: getCellValue(row, 2),
+        q1ChangeActual: getCellValue(row, 3),
+        q2ChangeActual: getCellValue(row, 4),
+        q3ChangePlan: getCellValue(row, 5),
+        q4ChangePlan: getCellValue(row, 6),
+        yearEndHeadcount2026: getCellValue(row, 7)
+      }));
+
+      const humanResourceSummaryList = getTableRows('人力资源指标汇总').map((row) => ({
+        serialNo: getCellValue(row, 0),
+        metric: getCellValue(row, 1),
+        budget2026: getCellValue(row, 2),
+        actual2026: getCellValue(row, 3)
+      }));
+
+      const logisticsOrderStatsList = getTableRows('物料物流-订单统计').map((row) => ({
+        dimension: getCellValue(row, 0),
+        quantity: getCellValue(row, 1)
+      }));
+
+      const logisticsDeliveryPlanList = getTableRows('物料物流-交付计划').map((row) => ({
+        dimension: getCellValue(row, 0),
+        quantity: getCellValue(row, 1)
+      }));
+
+      const logisticsForecastStatsList = getTableRows('物料物流-预测统计').map((row) => ({
+        dimension: getCellValue(row, 0),
+        quantity: getCellValue(row, 1)
+      }));
+
+      const logisticsInventoryStatsList = getTableRows('物料物流-库存统计').map((row) => ({
+        dimension: getCellValue(row, 0),
+        quantity: getCellValue(row, 1)
+      }));
+
+      const simCardManagementList = getTableRows('SIM卡管理').map((row) => ({
+        indicator: getCellValue(row, 0),
+        value: getCellValue(row, 1),
+        description: getCellValue(row, 2)
+      }));
+
+      return {
+        projectProgressList,
+        cashFlowList,
+        salesStatusList,
+        customerSalesProgressTop10List,
+        humanResourceReportList,
+        humanResourceSummaryList,
+        logisticsOrderStatsList,
+        logisticsDeliveryPlanList,
+        logisticsForecastStatsList,
+        logisticsInventoryStatsList,
+        simCardManagementList
+      };
+    }
+
+    async function saveTableDataToApi(isAuto = true) {
+      if (isSaving) return;
+      const tableData = collectTablePayload();
+      const payloadSnapshot = JSON.stringify(tableData);
+      if (isAuto && payloadSnapshot === lastSavedPayload) {
+        return;
+      }
+
+      isSaving = true;
+      try {
+        await request({
+          url: '/api/oa-portal/workReport/tableInfo/save',
+          method: 'post',
+          data: tableData
+        });
+        lastSavedPayload = payloadSnapshot;
+        if (vm.$message && typeof vm.$message.success === 'function') {
+          if (isAuto) {
+            vm.$message.success('自动保存成功');
+          } else {
+            vm.$message.success('保存成功');
+          }
+        }
+      } catch (error) {
+        // Auto-save is best-effort, UI should stay editable even if save fails.
+      } finally {
+        isSaving = false;
+      }
+    }
+
+    function startAutoSave() {
+      if (autoSaveTimerId) {
+        clearInterval(autoSaveTimerId);
+      }
+      autoSaveTimerId = setInterval(() => {
+        saveTableDataToApi(true);
+      }, AUTO_SAVE_INTERVAL_MS);
+    }
+
+    function renderRowsByAriaLabel(ariaLabel, rows, rowToCells) {
+      if (!Array.isArray(rows) || rows.length === 0) return;
+      const table = document.querySelector(`table[aria-label="${ariaLabel}"]`);
+      if (!table || !table.tBodies || !table.tBodies[0]) return;
+      const tbody = table.tBodies[0];
+      const html = rows.map((row) => {
+        const cells = rowToCells(row) || [];
+        const tds = cells.map((cell) => {
+          const className = cell.className ? ` class="${cell.className}"` : '';
+          const value = asText(firstNonNull(cell.value, '')).replace(/"/g, '&quot;');
+          return `<td${className}><input type="text" class="cell-input" value="${value}" /></td>`;
+        }).join('');
+        return `<tr>${tds}</tr>`;
+      }).join('');
+      if (html) {
+        tbody.innerHTML = html;
+        applyScopeAttr(tbody);
+      }
+    }
+
+    async function loadTableDataFromApi() {
+      try {
+        const { startDate, endDate } = getCurrentWeekRange();
+        const res = await request({
+          url: '/api/oa-portal/workReport/tableInfo',
+          method: 'post',
+          data: { startDate, endDate }
+        });
+        const data = (res && res.data && (res.data.data || res.data)) || null;
+        if (!data || typeof data !== 'object') return;
+
+        renderRowsByAriaLabel('重大项目进展表', data.projectProgressList, (row) => ([
+          { value: asText(row.projectName) },
+          { value: asText(row.projectGoal) },
+          { value: asText(row.recentProgress) },
+          { value: asText(row.risk) },
+          { value: asText(row.status) }
+        ]));
+
+        renderRowsByAriaLabel('现金流量表', data.cashFlowList, (row) => ([
+          { value: asText(row.item) },
+          { className: 'amount', value: asText(row.currentAmount) },
+          { className: 'amount', value: asText(row.previousAmount) }
+        ]));
+
+        renderRowsByAriaLabel('销售情况表', data.salesStatusList, (row) => ([
+          { value: asText(row.serialNo) },
+          { value: asText(row.productCategory) },
+          { value: asText(row.mainProduct) },
+          { className: 'num', value: asText(row.annualPlan2026) },
+          { className: 'num', value: asText(row.actualToDate) },
+          { className: 'num', value: asText(row.currentWeek) },
+          { className: 'num', value: asText(row.annualPlanCompletionRate) }
+        ]));
+
+        renderRowsByAriaLabel('主要客户销售进展情况', data.customerSalesProgressTop10List, (row) => ([
+          { className: 'num', value: asText(firstNonNull(row.serialNo, row.serialNO, row.no, row.index)) },
+          { value: asText(firstNonNull(row.majorCustomer, row.mainCustomer, row.customerName, row.customer)) },
+          { className: 'num', value: asText(firstNonNull(row.amountToDate2026, row.thisYearToDate, row.amountToDate, row.ytdAmount)) },
+          { className: 'num', value: asText(firstNonNull(row.completionRate, row.completeRate, row.finishRate, row.progressRate)) },
+          { value: asText(firstNonNull(row.note, row.remark, row.description)) }
+        ]));
+
+        renderRowsByAriaLabel('人力资源报告表', data.humanResourceReportList, (row) => ([
+          { className: 'num', value: asText(row.serialNo) },
+          { value: asText(row.departmentName) },
+          { className: 'num', value: asText(row.actualHeadcount2026) },
+          { className: 'num', value: asText(row.q1ChangeActual) },
+          { className: 'num', value: asText(row.q2ChangeActual) },
+          { className: 'num', value: asText(row.q3ChangePlan) },
+          { className: 'num', value: asText(row.q4ChangePlan) },
+          { className: 'num', value: asText(row.yearEndHeadcount2026) }
+        ]));
+
+        renderRowsByAriaLabel('人力资源指标汇总', data.humanResourceSummaryList, (row) => ([
+          { className: 'num', value: asText(row.serialNo) },
+          { value: asText(row.metric) },
+          { className: 'num', value: asText(row.budget2026) },
+          { className: 'num', value: asText(row.actual2026) }
+        ]));
+
+        renderRowsByAriaLabel('物料物流-订单统计', data.logisticsOrderStatsList, (row) => ([
+          { value: asText(row.dimension) },
+          { className: 'num', value: asText(row.quantity) }
+        ]));
+
+        renderRowsByAriaLabel('物料物流-交付计划', data.logisticsDeliveryPlanList, (row) => ([
+          { value: asText(row.dimension) },
+          { className: 'num', value: asText(row.quantity) }
+        ]));
+
+        renderRowsByAriaLabel('物料物流-预测统计', data.logisticsForecastStatsList, (row) => ([
+          { value: asText(row.dimension) },
+          { className: 'num', value: asText(row.quantity) }
+        ]));
+
+        renderRowsByAriaLabel('物料物流-库存统计', data.logisticsInventoryStatsList, (row) => ([
+          { value: asText(row.dimension) },
+          { className: 'num', value: asText(row.quantity) }
+        ]));
+
+        renderRowsByAriaLabel('SIM卡管理', data.simCardManagementList, (row) => ([
+          { value: asText(row.indicator) },
+          { value: asText(row.value) },
+          { value: asText(row.description) }
+        ]));
+      } catch (error) {
+        // Keep default page test data when API is unavailable or empty.
+      }
+    }
+
+    function autoResizeTextarea(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+
+    function initEditableCells() {
+      const editableTextCells = document.querySelectorAll('tbody td:not(.num):not(.amount) .cell-input');
+      editableTextCells.forEach((input) => {
+        if (input.tagName !== 'INPUT') return;
+        const table = input.closest('table');
+        const td = input.closest('td');
+        const tableLabel = table && table.getAttribute('aria-label');
+        const isCustomerTableCell = tableLabel === '主要客户销售进展情况';
+        if (isCustomerTableCell) return;
+        const isHrDepartmentCell = table
+          && tableLabel === '人力资源报告表'
+          && td
+          && td.cellIndex === 1;
+        if (isHrDepartmentCell) return;
+        const textarea = document.createElement('textarea');
+        textarea.className = 'cell-textarea';
+        textarea.rows = 1;
+        textarea.value = input.value || '';
+        textarea.setAttribute('aria-label', input.getAttribute('aria-label') || '可编辑文本');
+        applyScopeAttr(textarea);
+        input.replaceWith(textarea);
+        autoResizeTextarea(textarea);
+        textarea.addEventListener('input', () => autoResizeTextarea(textarea));
+      });
+    }
+
+    function clearRowFields(row) {
+      const fields = row.querySelectorAll('input, textarea, select');
+      fields.forEach((field) => {
+        if (field.tagName === 'SELECT') {
+          field.selectedIndex = 0;
+          return;
+        }
+        if (field.type === 'checkbox' || field.type === 'radio') {
+          field.checked = false;
+          return;
+        }
+        field.value = '';
+        if (field.tagName === 'TEXTAREA') {
+          autoResizeTextarea(field);
+        }
+      });
+    }
+
+    function getTodayLabel() {
+      const now = new Date();
+      const yyyy = now.getFullYear();
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const dd = String(now.getDate()).padStart(2, '0');
+      return `${yyyy}年${mm}月${dd}日`;
+    }
+
+    function initTableDateLabels() {
+      const todayLabel = getTodayLabel();
+      const tables = document.querySelectorAll('.sheet table');
+      tables.forEach((table) => {
+        const prev = table.previousElementSibling;
+        if (prev && prev.classList.contains('table-date-label')) {
+          prev.textContent = todayLabel;
+          return;
+        }
+        const dateLabel = document.createElement('div');
+        dateLabel.className = 'table-date-label';
+        dateLabel.textContent = todayLabel;
+        applyScopeAttr(dateLabel);
+        table.parentNode.insertBefore(dateLabel, table);
+      });
+    }
+
+    function initTableRowTools() {
+      const tables = document.querySelectorAll('.sheet table');
+      const excludedTableLabels = new Set([
+        '现金流量表',
+        '销售情况表',
+        '主要客户销售进展情况'
+      ]);
+      tables.forEach((table) => {
+        const tableLabel = (table.getAttribute('aria-label') || '').trim();
+        if (excludedTableLabels.has(tableLabel)) return;
+        if (!table.tBodies || table.tBodies.length === 0) return;
+        const tbody = table.tBodies[0];
+        if (!tbody || tbody.rows.length === 0) return;
+
+        const wrap = document.createElement('div');
+        wrap.className = 'table-tool-wrap';
+        applyScopeAttr(wrap);
+        table.parentNode.insertBefore(wrap, table);
+        wrap.appendChild(table);
+
+        const tools = document.createElement('div');
+        tools.className = 'table-row-tools';
+        applyScopeAttr(tools);
+
+        const addBtn = document.createElement('button');
+        addBtn.type = 'button';
+        addBtn.className = 'row-tool-btn';
+        addBtn.textContent = '+';
+        addBtn.setAttribute('aria-label', '新增一行');
+        applyScopeAttr(addBtn);
+
+        const removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.className = 'row-tool-btn';
+        removeBtn.textContent = '-';
+        removeBtn.setAttribute('aria-label', '删除一行');
+        applyScopeAttr(removeBtn);
+
+        addBtn.addEventListener('click', () => {
+          const sourceRow = [...tbody.rows].reverse().find((row) => !row.classList.contains('total')) || tbody.rows[tbody.rows.length - 1];
+          if (!sourceRow) return;
+          const newRow = sourceRow.cloneNode(true);
+          clearRowFields(newRow);
+          applyScopeAttr(newRow);
+          tbody.appendChild(newRow);
+        });
+
+        removeBtn.addEventListener('click', () => {
+          const removableRows = [...tbody.rows].filter((row) => !row.classList.contains('total'));
+          if (removableRows.length <= 1) return;
+          removableRows[removableRows.length - 1].remove();
+        });
+
+        tools.appendChild(addBtn);
+        tools.appendChild(removeBtn);
+        wrap.insertBefore(tools, table);
+      });
+    }
+
+    function initCustomerTableRowTools() {
+      const table = document.querySelector('table[aria-label="主要客户销售进展情况"]');
+      if (!table || !table.tBodies || !table.tBodies[0]) return;
+      const tbody = table.tBodies[0];
+      const addBtn = document.querySelector('[data-customer-row-action="add"]');
+      const removeBtn = document.querySelector('[data-customer-row-action="remove"]');
+      if (!addBtn || !removeBtn) return;
+
+      addBtn.addEventListener('click', () => {
+        const sourceRow = tbody.rows[tbody.rows.length - 1];
+        if (!sourceRow) return;
+        const newRow = sourceRow.cloneNode(true);
+        clearRowFields(newRow);
+        applyScopeAttr(newRow);
+        tbody.appendChild(newRow);
+      });
+
+      removeBtn.addEventListener('click', () => {
+        if (tbody.rows.length <= 1) return;
+        tbody.rows[tbody.rows.length - 1].remove();
+      });
+    }
+
+    async function initPage() {
+      await loadTableDataFromApi();
+      initEditableCells();
+      initTableDateLabels();
+      initTableRowTools();
+      initCustomerTableRowTools();
+      lastSavedPayload = JSON.stringify(collectTablePayload());
+      startAutoSave();
+    }
+    this._saveTableDataToApi = saveTableDataToApi;
+    await initPage();
+  },
+  beforeDestroy() {
+    if (autoSaveTimerId) {
+      clearInterval(autoSaveTimerId);
+      autoSaveTimerId = null;
+    }
+  }
+};
+</script>
+
+<style scoped>
+.work-week-report-from-image {
+      --blue-header: #4f86b7;
+      --blue-section: #b8c2d3;
+      --row-bg: #d4d9e4;
+      --line: #eef1f6;
+      --text: #111;
+      --table-font: clamp(13px, 1.2vw, 16px);
+      --title-font: clamp(18px, 1.8vw, 24px);
+      --cell-py: clamp(6px, 0.9vw, 10px);
+      --cell-px: clamp(6px, 0.8vw, 10px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    .work-week-report-from-image {
+      margin: 0;
+      background: #f4f6fa;
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .sheet {
+      width: 100%;
+      max-width: 1120px;
+      background: #fff;
+      border: 1px solid var(--line);
+      overflow-x: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(30, 30, 30, 0.06);
+      padding-bottom: 10px;
+    }
+
+    .export-pdf-btn {
+      position: fixed;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      z-index: 1000;
+      border: 1px solid #2f6fa8;
+      background: #4f86b7;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1;
+      padding: 10px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .export-pdf-btn:hover {
+      background: #3f78aa;
+    }
+
+    .export-pdf-btn:active {
+      transform: translateY(1px);
+    }
+
+    .save-table-btn {
+      position: fixed;
+      top: calc(50% - 52px);
+      right: 16px;
+      z-index: 1000;
+      border: 1px solid #2f6fa8;
+      background: #4f86b7;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1;
+      padding: 10px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .save-table-btn:hover {
+      background: #3f78aa;
+    }
+
+    .save-table-btn:active {
+      transform: translateY(1px);
+    }
+
+    .sheet-title {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      font-size: var(--title-font);
+      line-height: 1.2;
+      padding: 8px 10px;
+      gap: 8px;
+      margin: 0 0 10px;
+      color: #1d3f60;
+      font-weight: 700;
+      background: #eef5fb;
+      border-left: 5px solid var(--blue-header);
+      border-radius: 4px;
+    }
+
+    .sheet-title .left {
+      color: #1d3f60;
+    }
+
+    .sheet-title .unit {
+      text-align: right;
+      font-size: clamp(14px, 1.5vw, 20px);
+      color: #2f587f;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
+
+    th,
+    td {
+      border: 2px solid var(--line);
+      padding: var(--cell-py) var(--cell-px);
+      background: var(--row-bg);
+      font-size: var(--table-font);
+      line-height: 1.25;
+      vertical-align: middle;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      background: var(--blue-header);
+      color: #fff;
+      font-weight: 700;
+      text-align: left;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .cell-input,
+    .cell-textarea {
+      width: 100%;
+      min-width: 2em;
+      max-width: 100%;
+      border: none;
+      background: transparent;
+      font: inherit;
+      font-size: inherit;
+      color: inherit;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      line-height: inherit;
+      vertical-align: middle;
+    }
+
+    .cell-textarea {
+      display: block;
+      resize: none;
+      min-height: 2.4em;
+      overflow: hidden;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .cell-input:focus,
+    .cell-textarea:focus {
+      outline: 2px solid #2f6fa8;
+      outline-offset: 1px;
+      border-radius: 2px;
+    }
+
+    .table-tool-wrap {
+      margin-top: 8px;
+    }
+
+    .table-date-label {
+      font-size: 13px;
+      line-height: 1.2;
+      color: #2f587f;
+      font-weight: 600;
+      margin: 8px 0 4px;
+      text-align: left;
+    }
+
+    .table-row-tools {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .row-tool-btn {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #2f6fa8;
+      border-radius: 4px;
+      background: #4f86b7;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .row-tool-btn:hover {
+      background: #3f78aa;
+    }
+
+    td.amount .cell-input,
+    td.num .cell-input,
+    td.amount .cell-textarea,
+    td.num .cell-textarea {
+      text-align: right;
+    }
+
+    td.amount {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    tr.section td {
+      background: var(--blue-section);
+      font-weight: 700;
+    }
+
+    tr.section td.amount {
+      background: var(--blue-section);
+    }
+
+    tr.bold td:first-child {
+      font-weight: 700;
+    }
+
+    .sales-wrap {
+      margin-top: 24px;
+    }
+
+    .sales-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: var(--title-font);
+      line-height: 1.1;
+      margin: 0 0 10px;
+      color: #1d3f60;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-weight: 700;
+      background: #eef5fb;
+      border-left: 5px solid var(--blue-header);
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+
+    .sales-title .unit {
+      font-size: clamp(14px, 1.5vw, 20px);
+      color: #2f587f;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    table.sales {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
+
+    table.sales th,
+    table.sales td {
+      border: 3px solid #1e1e1e;
+      background: #fff;
+      color: #111;
+      font-size: var(--table-font);
+      padding: var(--cell-py) var(--cell-px);
+      line-height: 1.25;
+      min-height: clamp(34px, 2.8vw, 42px);
+      text-align: left;
+      vertical-align: middle;
+      word-break: break-word;
+    }
+
+    table.sales th {
+      background: var(--blue-header);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    table.sales td.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      word-break: normal;
+    }
+
+    table.sales .cell-input,
+    table.sales .cell-textarea {
+      font-size: var(--table-font);
+      line-height: 1.25;
+    }
+
+    table.sales .cell-textarea {
+      min-height: 1.25em;
+    }
+
+    table.sales tr.total td {
+      font-weight: 700;
+    }
+
+    table.sales col {
+      width: auto !important;
+    }
+
+    .customer-wrap {
+      margin-top: 24px;
+    }
+
+    .customer-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: var(--title-font);
+      line-height: 1.1;
+      margin: 0 0 10px;
+      color: #1d3f60;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-weight: 700;
+      background: #eef5fb;
+      border-left: 5px solid var(--blue-header);
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+
+    .customer-title .unit {
+      font-size: clamp(14px, 1.5vw, 20px);
+      color: #2f587f;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .customer-title-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    .customer-row-tools {
+      display: inline-flex;
+      gap: 6px;
+    }
+
+    .customer-table-wrap {
+      position: relative;
+    }
+
+    .customer-table-wrap .customer-row-tools {
+      position: absolute;
+      top: 0;
+      right: 6px;
+      z-index: 2;
+    }
+
+    table.customer {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
+
+    table.customer th,
+    table.customer td {
+      border: 3px solid #1e1e1e;
+      background: #fff;
+      color: #111;
+      font-size: var(--table-font);
+      padding: var(--cell-py) var(--cell-px);
+      line-height: 1.25;
+      text-align: left;
+      vertical-align: middle;
+      word-break: break-word;
+    }
+
+    table.customer th {
+      background: var(--blue-header);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    table.customer td.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      word-break: normal;
+    }
+
+    table.customer col {
+      width: auto !important;
+    }
+
+    .hr-wrap {
+      margin-top: 24px;
+    }
+
+    .hr-panels {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .hr-title {
+      font-size: var(--title-font);
+      line-height: 1.1;
+      margin: 0 0 10px;
+      color: #1d3f60;
+      font-weight: 700;
+      background: #eef5fb;
+      border-left: 5px solid var(--blue-header);
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+
+    table.hr {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    table.hr th,
+    table.hr td {
+      border: 3px solid #1e1e1e;
+      background: #fff;
+      color: #111;
+      font-size: var(--table-font);
+      padding: var(--cell-py) var(--cell-px);
+      line-height: 1.2;
+      text-align: left;
+      vertical-align: middle;
+      word-break: break-word;
+    }
+
+    table.hr thead th.group {
+      background: var(--blue-header);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    table.hr th {
+      background: var(--blue-header);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    table.hr td.num,
+    table.hr th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    table.hr td:nth-child(2),
+    table.hr th:nth-child(2) {
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    table.hr td.num .cell-input,
+    table.hr td.num .cell-textarea {
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    table.hr tr.total td {
+      font-weight: 700;
+    }
+
+    .hr-right {
+      display: flex;
+    }
+
+    .hr-right.is-hidden {
+      display: none !important;
+    }
+
+    table.hr-side {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+      height: 100%;
+    }
+
+    table.hr-side th,
+    table.hr-side td {
+      border: 3px solid #1e1e1e;
+      background: #fff;
+      color: #245b8f;
+      font-size: var(--table-font);
+      padding: var(--cell-py) var(--cell-px);
+      line-height: 1.2;
+      text-align: left;
+      vertical-align: middle;
+      word-break: break-word;
+    }
+
+    table.hr-side th {
+      background: var(--blue-header);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    table.hr-side td.num,
+    table.hr-side th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    table.hr-side td.num .cell-input,
+    table.hr-side td.num .cell-textarea {
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    table.hr-side tr.total td {
+      font-weight: 700;
+    }
+
+    .project-wrap {
+      margin-top: 24px;
+    }
+
+    .project-title {
+      font-size: var(--title-font);
+      line-height: 1.1;
+      margin: 0 0 10px;
+      color: #1d3f60;
+      font-weight: 700;
+      background: #eef5fb;
+      border-left: 5px solid var(--blue-header);
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+
+    table.project {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
+
+    table.project th,
+    table.project td {
+      border: 3px solid #1e1e1e;
+      background: #fff;
+      color: #111;
+      font-size: var(--table-font);
+      padding: var(--cell-py) var(--cell-px);
+      line-height: 1.25;
+      text-align: left;
+      vertical-align: middle;
+      word-break: break-word;
+    }
+
+    table.project th {
+      background: var(--blue-header);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .logistics-wrap,
+    .sim-wrap {
+      margin-top: 24px;
+    }
+
+    .logistics-title,
+    .sim-title {
+      font-size: var(--title-font);
+      line-height: 1.1;
+      margin: 0 0 10px;
+      color: #1d3f60;
+      font-weight: 700;
+      background: #eef5fb;
+      border-left: 5px solid var(--blue-header);
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+
+    .logistics-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .logistics-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .sub-title {
+      font-size: clamp(14px, 1.3vw, 18px);
+      color: #2f587f;
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+
+    table.logistics,
+    table.sim {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
+
+    table.logistics th,
+    table.logistics td,
+    table.sim th,
+    table.sim td {
+      border: 3px solid #1e1e1e;
+      background: #fff;
+      color: #111;
+      font-size: var(--table-font);
+      padding: var(--cell-py) var(--cell-px);
+      line-height: 1.25;
+      text-align: left;
+      vertical-align: middle;
+      word-break: break-word;
+    }
+
+    table.logistics th,
+    table.sim th {
+      background: var(--blue-header);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    table.logistics td.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .sheet-title,
+      .sheet-title .unit,
+      .sales-title,
+      .sales-title .unit,
+      .customer-title,
+      .customer-title .unit,
+      .hr-title {
+        font-size: 18px;
+      }
+
+      th,
+      td,
+      table.sales th,
+      table.sales td,
+      table.customer th,
+      table.customer td,
+      table.hr th,
+      table.hr td,
+      table.hr-side th,
+      table.hr-side td,
+      table.project th,
+      table.project td,
+      table.logistics th,
+      table.logistics td,
+      table.sim th,
+      table.sim td {
+        font-size: 13px;
+        padding: 6px 6px;
+      }
+
+      .hr-panels {
+        grid-template-columns: 1fr;
+      }
+
+      .logistics-grid-2,
+      .logistics-grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 10mm;
+    }
+
+    @media print {
+      html,
+    .work-week-report-from-image {
+        width: 210mm;
+        background: #fff !important;
+      }
+    .work-week-report-from-image {
+        margin: 0;
+        padding: 0;
+        display: block;
+        color: #000;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .sheet {
+        max-width: none;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+        padding-bottom: 0;
+      }
+
+      .export-pdf-btn {
+        display: none !important;
+      }
+
+      .save-table-btn {
+        display: none !important;
+      }
+
+      .table-row-tools {
+        display: flex !important;
+        margin-bottom: 1.2mm;
+      }
+
+      .row-tool-btn {
+        border: 1px solid #000 !important;
+        background: #fff !important;
+        color: #000 !important;
+        width: 5.5mm;
+        height: 5.5mm;
+        font-size: 11pt;
+      }
+
+      .sheet-title,
+      .sales-title,
+      .customer-title,
+      .hr-title {
+        font-size: 13pt !important;
+        margin-bottom: 4mm;
+      }
+
+      .sheet-title {
+        padding: 0 0 2mm 0;
+      }
+
+      table,
+      table.sales,
+      table.customer,
+      table.hr,
+      table.hr-side,
+      table.project {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        margin-bottom: 6mm;
+        page-break-inside: auto;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      tfoot {
+        display: table-footer-group;
+      }
+
+      tr,
+      tbody {
+        page-break-inside: auto;
+        break-inside: auto;
+      }
+
+      td,
+      th {
+        page-break-inside: auto;
+        break-inside: auto;
+      }
+
+      th,
+      td,
+      table.sales th,
+      table.sales td,
+      table.customer th,
+      table.customer td,
+      table.hr th,
+      table.hr td,
+      table.hr-side th,
+      table.hr-side td,
+      table.project th,
+      table.project td {
+        font-size: 10.5pt !important;
+        line-height: 1.25;
+        padding: 1.8mm 1.6mm;
+        color: #000 !important;
+      }
+
+      .sales-title,
+      .customer-title,
+      .hr-title,
+      .project-title,
+      .logistics-title,
+      .sim-title {
+        margin-bottom: 2mm;
+        page-break-after: avoid;
+        break-after: avoid-page;
+      }
+
+      .sub-title {
+        margin-bottom: 1.2mm;
+        page-break-after: avoid;
+        break-after: avoid-page;
+      }
+
+      .sales-wrap,
+      .customer-wrap,
+      .hr-wrap,
+      .project-wrap,
+      .logistics-wrap,
+      .sim-wrap {
+        margin-top: 0;
+        margin-bottom: 2mm;
+        page-break-inside: auto;
+        break-inside: auto;
+      }
+
+      .hr-wrap {
+        page-break-before: auto;
+      }
+
+      .project-wrap,
+      .logistics-wrap,
+      .sim-wrap {
+        page-break-before: auto;
+      }
+
+      .hr-panels {
+        grid-template-columns: 1fr;
+        gap: 4mm;
+      }
+
+      .logistics-grid-2,
+      .logistics-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 2mm;
+      }
+
+      .logistics-grid-2 > div,
+      .logistics-grid-3 > div {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      table.logistics,
+      table.sim {
+        page-break-inside: auto;
+        break-inside: auto;
+      }
+
+      .cell-input,
+      .cell-textarea {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+</style>

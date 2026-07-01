@@ -1,0 +1,220 @@
+.el-dropdown-menu__item {
+  font-size: 12px !important;
+  line-height: 28px !important;
+}
+
+//.el-card.is-always-shadow {
+//  box-shadow: none;
+//  border: none !important;
+//}
+
+.el-scrollbar__view {
+  height: 100%;
+}
+
+.el-menu--horizontal {
+  border-bottom: none !important;
+}
+
+.el-menu {
+  border-right: none !important;
+}
+
+.el-menu--display,
+.el-menu--display + .el-submenu__icon-arrow {
+  display: none;
+}
+
+
+.el-message__icon,
+.el-message__content {
+  display: inline-block;
+}
+
+.el-date-editor .el-range-input,
+.el-date-editor .el-range-separator {
+  height: auto;
+  overflow: hidden;
+}
+.el-radio__label{
+  color: #606266!important;
+}
+.el-radio__input.is-disabled .el-radio__inner{
+  background-color: transparent;
+}
+.el-input.is-disabled .el-input__inner {
+  color: #606266!important;
+  -webkit-text-fill-color:#606266!important;
+  // background:#fff!important;
+  opacity: 1;
+}
+.el-range-editor.is-disabled{
+  color: #606266!important;
+  -webkit-text-fill-color:#606266!important;
+  // background:#fff!important;
+  opacity: 1;
+}
+
+.el-textarea.is-disabled .el-textarea__inner{
+  color: #606266!important;
+  -webkit-text-fill-color:#606266!important;
+  // background:#fff!important;
+  opacity: 1;
+}
+.el-col {
+  // margin-bottom: 8px;
+}
+
+.el-main {
+  padding: 0 !important;
+}
+
+.el-dropdown-menu__item--divided:before, .el-menu, .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover, .el-menu--horizontal > .el-submenu .el-submenu__title:hover {
+  // background-color: transparent;
+  color: black;
+}
+
+
+.el-dropdown-menu__item--divided:before, .el-menu, .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover, .el-menu--horizontal > .el-submenu .el-submenu__title:hover {
+  // background-color: transparent !important;
+  color: black !important;
+}
+
+.el-card__header {
+  padding: 6px 18px !important;
+}
+
+.el-card__body {
+  //padding: 16px !important;
+}
+
+.el-divider--horizontal {
+  margin: 12px 0 !important;
+}
+// 表单
+.el-form{
+  .el-select,.el-cascader{
+    width: 100%;
+  }
+}
+// 表格样式
+.el-table__header-wrapper,.el-table__fixed-header-wrapper ,.avue-crud .el-table{
+  thead{
+    th{
+      background-color: #f5f7fa !important;
+    }
+  }
+
+
+}
+.el-table {
+  .el-button {
+      padding: 0;
+    }
+        .el-button+.el-button {
+          margin-left: 5px;
+        }
+}
+@media  screen and (max-width: 768px) {
+.el-table .cell {
+    padding-left: 0px;
+    padding-right: 0;
+  }
+}
+.el-table .el-table__body-wrapper::-webkit-scrollbar {
+  // width: 12px;
+  height: 12px;
+  background-color: transparent;
+}
+// 分页
+.el-pagination{
+  margin-top: 20px;
+}
+// 日历
+.el-month-table td.current:not(.disabled) .cell {
+  color: #409EFF;
+
+  }
+
+// ============================================================
+// element-ui 2.15 相比 2.13 间距变大,这里强制覆盖回 2.13 标准
+// 项目之前用 CDN 加载老版本(2.4~2.13),npm 升到 2.15.14 后 el-button/el-input/el-table 整体显宽
+// ============================================================
+
+// 1. el-button 各尺寸 padding 压回 2.13 标准
+//    2.15 mini 是 9px/15px,2.13 是 7px/15px(整体 -4px 行高)
+$btn-mini-py: 5px;
+$btn-mini-px: 15px;
+$btn-small-py: 7px;
+$btn-small-px: 15px;
+$btn-medium-py: 9px;
+$btn-medium-px: 18px;
+.el-button {
+  &--mini {
+    padding: $btn-mini-py $btn-mini-px !important;
+  }
+  &--small {
+    padding: $btn-small-py $btn-small-px !important;
+  }
+  &--medium {
+    padding: $btn-medium-py $btn-medium-px !important;
+  }
+}
+
+// 2. el-input / el-textarea 高度和行高压回 36px
+.el-input__inner,
+.el-textarea__inner {
+  line-height: 36px !important;
+  height: 36px !important;
+}
+.el-textarea__inner {
+  line-height: 1.5 !important;
+  height: auto !important;
+}
+.el-input--mini .el-input__inner {
+  height: 28px !important;
+  line-height: 28px !important;
+}
+.el-input--small .el-input__inner {
+  height: 32px !important;
+  line-height: 32px !important;
+}
+
+// 3. el-table 单元格 padding 压回 12px 0
+.el-table td,
+.el-table th {
+  padding: 6px 0 !important;
+}
+.el-table .cell {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+// 4. el-form-item 间距(2.15 是 22px,2.13 是 22px,但行高变化累积,统一设小)
+.el-form-item {
+  margin-bottom: 18px !important;
+}
+
+// 5. el-dialog body padding(2.15 加了 5px)
+.el-dialog__body {
+  padding: 20px 20px !important;
+}
+
+// 6. el-message / el-notification 字号行高
+.el-message {
+  padding: 10px 15px !important;
+}
+
+// 7. PDF 预览容器
+//    pdfvuer 默认 scale='page-width' 是按 $refs.container.offsetWidth 算缩放,
+//    但直接放在 el-dialog__body 里容器没有显式宽度约束,渲染出来会撑爆 dialog。
+//    套一层带 max-height + overflow 的容器后,pdfvuer 会按容器宽度算缩放,
+//    高度超出时 dialog 内部滚动,不再让 PDF 跑出 dialog 框。
+//    overflow-x: hidden 避免 pdfjs 初次以 scale=1 渲染时短暂出现水平滚动条
+.pdf-preview-wrapper {
+  width: 100%;
+  max-height: 65vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}

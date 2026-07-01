@@ -1,0 +1,70 @@
+export default {
+  height:'auto',
+  calcHeight: 30,
+  tip: false,
+  searchShow: true,
+  searchMenuSpan: 6,
+  border: true,
+  index: true,
+  viewBtn: true,
+  selection: true,
+  dialogClickModal: false,
+  column: [
+    {
+      label: "主键 ID",
+      prop: "id",
+      type: "input",
+      addDisplay: false,
+      editDisplay: false,
+      viewDisplay: false,
+      hide: true,
+    },
+    {
+      label: "区域 ID",
+      prop: "areaId",
+      type: "input",
+    },
+    {
+      label: "区域",
+      prop: "areaName",
+    },
+    {
+      label: "操作类型",
+      prop: "operationType",
+      type: "input",
+    },
+    {
+      label: "操作时间",
+      prop: "operationTime",
+      type: "input",
+    },
+    {
+      label: "用户名称",
+      prop: "userName",
+      type: "input",
+    },
+    {
+      label: "用户 ID",
+      prop: "userId",
+      type: "input",
+    },
+    {
+      label: "状态",
+      prop: "status",
+      type: "input",
+      addDisplay: false,
+      editDisplay: false,
+      viewDisplay: false,
+      hide: true,
+    },
+    {
+      label: "是否已删除",
+      prop: "isDeleted",
+      type: "input",
+      addDisplay: false,
+      editDisplay: false,
+      viewDisplay: false,
+      hide: true,
+    },
+  ]
+}
