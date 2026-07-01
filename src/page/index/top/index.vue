@@ -19,12 +19,12 @@
           <top-color></top-color>
         </div>
       </el-tooltip>
-      <el-tooltip v-if="showDebug" effect="dark" :content="logsFlag ? $t('navbar.bug') : logsLen + $t('navbar.bugs')"
+      <!-- <el-tooltip v-if="showDebug" effect="dark" :content="logsFlag ? $t('navbar.bug') : logsLen + $t('navbar.bugs')"
         placement="bottom">
         <div class="top-bar__item">
           <top-logs></top-logs>
         </div>
-      </el-tooltip>
+      </el-tooltip> -->
       <el-tooltip v-if="showLock" effect="dark" :content="$t('navbar.lock')" placement="bottom">
         <div class="top-bar__item">
           <!--          <top-lock></top-lock>-->
@@ -80,7 +80,7 @@ import { fullscreenToggel, listenfullscreen } from "@/util/util";
 import topMenu from "./top-menu";
 import topSearch from "./top-search";
 import topTheme from "./top-theme";
-import topLogs from "./top-logs";
+// import topLogs from "./top-logs";
 import topColor from "./top-color";
 import topNotice from "./top-notice";
 import topLang from "./top-lang";
@@ -91,7 +91,7 @@ export default {
     topMenu,
     topSearch,
     topTheme,
-    topLogs,
+    // topLogs,
     topColor,
     topNotice,
     topLang,

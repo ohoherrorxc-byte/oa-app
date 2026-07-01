@@ -21,8 +21,8 @@
             <!--<top-lang></top-lang>-->
           </h4>
           <userLogin ref="userLogin" :canLoginWhole="canLoginWhole" v-if="activeName==='user'"></userLogin>
-          <codeLogin v-else-if="activeName==='code'"></codeLogin>
-          <thirdLogin v-else-if="activeName==='third'"></thirdLogin>
+          <!-- <codeLogin v-else-if="activeName==='code'"></codeLogin>
+          <thirdLogin v-else-if="activeName==='third'"></thirdLogin> -->
           <div class="login-menu" v-show="false">
             <a href="#" @click.stop="activeName='user'">{{ $t('login.userLogin') }}</a>
             <!--<a href="#" @click.stop="activeName='code'">{{ $t('login.phoneLogin') }}</a>-->
@@ -35,8 +35,8 @@
 </template>
 <script>
   import userLogin from "./userlogin";
-  import codeLogin from "./codelogin";
-  import thirdLogin from "./thirdlogin";
+  // import codeLogin from "./codelogin";
+  // import thirdLogin from "./thirdlogin";
   import {mapGetters} from "vuex";
   import {dateFormat} from "@/util/date";
   import {validatenull} from "@/util/validate";
@@ -50,8 +50,8 @@
     name: "login",
     components: {
       userLogin,
-      codeLogin,
-      thirdLogin,
+      // codeLogin,
+      // thirdLogin,
       topLang,
       topColor
     },

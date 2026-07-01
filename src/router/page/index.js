@@ -114,17 +114,7 @@ export default [
     path: '*',
     redirect: '/404'
   },
-  {
-    path: '/balance',
-    name: '余额查询',
-    component: () =>
-      import( /* webpackChunkName: "page" */ '@/page/portal/balance'),
-    meta: {
-      keepAlive: false,
-      isTab: false,
-      isAuth: false
-    }
-  },
+  
   
 
 ]
