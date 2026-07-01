@@ -152,21 +152,7 @@ export default [{
       component: () =>
         import( /* webpackChunkName: "views" */ '@/views/contract/contractBOMAdd')
     }]
-  }, {
-    path: '/contractPOAdd',
-    component: Layout,
-    redirect: '/contract/contractPOAdd',
-    children: [{
-      path: '/contractPOAdd',
-      name: '销售PO订单申请',
-      meta: {
-        i18n: 'work',
-        keepAlive:false
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/contract/contractPOAdd')
-    }]
-  }, {
+  },  {
     path: '/contractApplicationAdd',
     component: Layout,
     redirect: '/contract/contractApplicationAdd',

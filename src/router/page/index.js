@@ -125,16 +125,6 @@ export default [
       isAuth: false
     }
   },
-  {
-    path: '/weather',
-    name: '天气',
-    component: () =>
-      import( /* webpackChunkName: "page" */ '@/views/saic/weatherState'),
-    meta: {
-      keepAlive: false,
-      isTab: false,
-      isAuth: false
-    }
-  },
+  
 
 ]
