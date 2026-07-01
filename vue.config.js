@@ -140,7 +140,6 @@ module.exports = {
       // 'vue': 'Vue',
       'vue-router': 'VueRouter',
       'vuex': 'Vuex',
-      'axios': 'axios',
       // 'element-ui': 'ELEMENT',
     });
     const entry = config.entry('app');
