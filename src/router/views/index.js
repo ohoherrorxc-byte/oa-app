@@ -80,19 +80,7 @@ export default [{
 },{
     path: '/oa',
     component: Layout,
-    redirect: '/oa/homePage/index',
-    children: [{
-      path: 'homePage/index',
-      name: '首页',
-      meta: {
-        i18n: 'dashboard',
-        menu: false,
-        keepAlive:false
-      },
-      component: () =>
-        // 首屏页单独拆分，避免与其它 views 路由合并成大 chunk
-        import( /* webpackChunkName: "oa-home" */ '@/views/oa/homePage/index')
-    }]
+    redirect: '/oa/myFlow/index',
   },
   {
     path: '/salesContractDetail',
