@@ -13,33 +13,6 @@ module.exports = {
   //   template: 'public/index.html',
   //   filename: 'index.html'
   // },
-  // // APP专用入口 - 仅包含需要嵌入的模块
-  // app: {
-  //   entry: 'src/app-main.js',
-  //   template: 'public/app.html',
-  //   filename: 'app.html'
-  // },
-  // configureWebpack: {
-  //   optimization: {
-  //     splitChunks: {
-  //       cacheGroups: {
-  //         vendor: {
-  //           test: /[\\/]node_modules[\\/]/,
-  //           name: 'vendor',
-  //           priority: -10,
-  //           reuseExistingChunk: true
-  //         },
-  //         // 仅APP入口的代码分割
-  //         app: {
-  //           test: /[\\/]src[\\/]views[\\/]AppFeature\.vue/,
-  //           name: 'app-feature',
-  //           priority: 20,
-  //           reuseExistingChunk: true
-  //         }
-  //       }
-  //     }
-  //   }
-  // },
   configureWebpack: config => {
     // 修复 pdfjs-dist@2.x 的 Array.prototype 污染问题：
     //   pdfjs-dist@2 主版本会给 Array.prototype 添加 remove 等可枚举方法，
@@ -143,8 +116,12 @@ module.exports = {
       // 'element-ui': 'ELEMENT',
     });
     const entry = config.entry('app');
-    entry.add('babel-polyfill').end();
-    entry.add('classlist-polyfill').end();
+    // 不再手动注入 babel-polyfill / classlist-polyfill：
+    //   browserslist 4.28.2 默认覆盖 '> 0.5%, last 2 versions, not dead'，
+    //   Vue CLI 5 + @vue/cli-plugin-babel 已根据 browserslist 自动按需注入 core-js@3 polyfill。
+    //   手动注入会强制把整个 core-js@2 (~250KB gz) + classlist-polyfill (~3KB) 塞进 app.js。
+    //   删掉这两个 entry 后，如果用户在低版本浏览器（IE11 / 旧 Android）报错，
+    //   再针对性按需引入即可。
   },
   css: {
     extract: { ignoreOrder: true }
@@ -157,7 +134,6 @@ module.exports = {
         //本地服务接口地址188
         target: 'http://10.30.5.188:8050',//徐畅 'http://10.30.5.188:8050', //oa_test 'http://10.30.5.175:8050',//曹工 http://10.30.5.85:8050 http://10.30.5.175:8050, 测试环境'https://10.30.4.61:30239'7
         //target: 'http://10.135.99.50:8089/api',
-        //ceshi
         //远程演示服务地址,可用于直接启动项目zhua
         //target: 'https://saber.bladex.vip/api',
         disableHostCheck: true,
