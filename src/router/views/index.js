@@ -34,31 +34,7 @@ export default [{
     },
     component: () =>
       import( /* webpackChunkName: "portal-index" */ '@/views/portal/index')
-  }, {
-    path: 'vehiclePrepaidCardEdit',
-    name: 'Bind a card',
-    meta: {
-      i18n: 'vehiclePrepaidCardEdit'
-    },
-    component: () =>
-      import( /* webpackChunkName: "portal-vehiclePrepaidCardEdit" */ '@/views/portal/vehiclePrepaidCardEdit')
-  }, {
-    path: '/saic/license-order-detail',
-    name: 'TBOX订单详情',
-    meta: {
-      i18n: 'license-order-detail'
-    },
-    component: () =>
-      import( /* webpackChunkName: "saic-license-order-detail" */ '@/views/saic/license-order-detail')
-  }, {
-    path: '/saic/license-bill-detail',
-    name: '付款订单详情',
-    meta: {
-      i18n: 'license-bill-detail'
-    },
-    component: () =>
-      import( /* webpackChunkName: "saic-license-bill-detail" */ '@/views/saic/license-bill-detail')
-  }]
+  } ]
 },  {
   path: '/info',
   component: Layout,
