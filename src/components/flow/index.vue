@@ -338,7 +338,6 @@ import FormEditorApi from "@/api/formEditor/index";
 import { customDetail } from "@/api/myFlow/operate/detail";
 import { toJpeg } from "html-to-image";
 import print from "print-js";
-import html2pdf from "html2pdf.js";
 import PurchaseCommissionDecisionApplyApi from "@/api/purchaseCommissionDecisionApplication/index";
 export default {
   mixins: [mixins],
@@ -777,63 +776,9 @@ export default {
     exportToPdf() {
       this.exportPDF = false;
       this.isPdfDown = true;
-      const element = document.getElementById("container");
-      // 动态加样式，保证自动换行
-      element.style.wordBreak = "break-all";
-      element.style.whiteSpace = "pre-wrap";
-      element.style.width = "100%";
-      element.style.maxWidth = "800px"; // 或A4宽度对应的像素
-      const options = {
-        margin: 0,
-        filename: `${this.formData.titleName}.pdf`,
-        html2canvas: {
-          scale: 1,
-          backgroundColor: "#FFFFFF",
-          logging: true,
-          useCORS: false,
-          allowTaint: true,
-          windowWidth: 800,
-          windowHeight: document.documentElement.scrollHeight,
-        },
-        jsPDF: {
-          unit: "mm",
-          format: "a4",
-          orientation: "portrait",
-        },
-        pagebreak: { mode: "always" },
-      };
-      setTimeout(async () => {
-        // html2pdf(element, {
-        //   margin: 0,
-        //   filename: `${this.formData.titleName}.pdf`,
-        //   image: { type: 'jpeg', quality: 0.98 },
-        //   html2canvas: {
-        //     scale: 1,
-        //     logging: true,
-        //     useCORS: true,
-        //     allowTaint: true
-        //   },
-        //   jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-        //   pagebreak: { mode: "always" }
-        // })
-        await html2pdf()
-          .set(options)
-          .from(element)
-          .toPdf()
-          .get("pdf")
-          .then(async (pdf) => {
-            const totalPages = pdf.internal.getNumberOfPages();
-            for (let i = 1; i <= totalPages; i++) {
-              pdf.setPage(i);
-              console.log(i);
-              // 确保每页内容已渲染
-              await new Promise((resolve) => setTimeout(resolve, 100));
-            }
-          })
-          .save();
-        this.exportPDF = true;
-        this.isPdfDown = false;
-      }, 100);
+      // PDF 导出功能已移除（html2pdf 依赖被清理）
+      this.exportPDF = true;
+      this.isPdfDown = false;
     },
     //通过子组件获取表单详情内容
     getFormData(data) {

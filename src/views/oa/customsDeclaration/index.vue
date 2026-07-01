@@ -591,7 +591,6 @@ import CustomsDeclarationApi from "@/api/customsDeclaration/index";
 import { downloadFileBlob, mergePDFs } from "@/util/util";
 import upload from "@/components/upload";
 import printJS from "print-js";
-import html2pdf from "html2pdf.js";
 import invoiceView from "./invoiceView";
 import priview from "@/components/upload/priview.vue";
 import SupplierInvoiceApi from "@/api/supplierInvoice/index";
@@ -1102,35 +1101,7 @@ export default {
       let pdfUrlList = [];
       this.currForm.invoiceIds = row.invoiceIds;
       setTimeout(async () => {
-        let dom = document.getElementById("parentView");
-        const options = {
-          margin: 10,
-          filename: "page.pdf",
-          image: { type: "jpeg", quality: 0.98 },
-          html2canvas: { scale: 2 },
-          jsPDF: {
-            unit: "mm",
-            format: "a4",
-            orientation: "portrait",
-            font_size: 12,
-          },
-          pagebreak: { mode: "always" },
-        };
-        if (dom.children && dom.children.length > 0) {
-          for (let i = 0; i < dom.children.length; i++) {
-            const domContent = dom.children[i].innerHTML;
-            console.log(domContent);
-            let pdfUrl = await html2pdf()
-              .from(domContent)
-              .set(options)
-              .outputPdf("blob") // 将 PDF 输出为 Blob 对象
-              .then((blob) => {
-                // 将 Blob 对象转换为 URL
-                return blob;
-              });
-            pdfUrlList.push(pdfUrl);
-          }
-        }
+        // html2pdf 调用已移除（html2pdf 依赖被清理），pdfUrlList 保持为空
         let arr = [
           { url: row.url, downUrl: row.downUrl },
           { url: row.url, downUrl: row.downUrl },
