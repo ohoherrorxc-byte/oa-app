@@ -59,46 +59,7 @@ export default [{
     component: () =>
       import( /* webpackChunkName: "saic-license-bill-detail" */ '@/views/saic/license-bill-detail')
   }]
-}, {
-  path: '/test',
-  component: Layout,
-  redirect: '/test/index',
-  children: [{
-    path: 'index',
-    name: '测试页',
-    meta: {
-      i18n: 'test'
-    },
-    component: () =>
-      import( /* webpackChunkName: "views" */ '@/views/util/test')
-  }]
-}, {
-  path: '/dict-horizontal',
-  component: Layout,
-  redirect: '/dict-horizontal/index',
-  children: [{
-    path: 'index',
-    name: '字典管理',
-    meta: {
-      i18n: 'dict'
-    },
-    component: () =>
-      import( /* webpackChunkName: "views" */ '@/views/util/demo/dict-horizontal')
-  }]
-}, {
-  path: '/dict-vertical',
-  component: Layout,
-  redirect: '/dict-vertical/index',
-  children: [{
-    path: 'index',
-    name: '字典管理',
-    meta: {
-      i18n: 'dict'
-    },
-    component: () =>
-      import( /* webpackChunkName: "views" */ '@/views/util/demo/dict-vertical')
-  }]
-}, {
+},  {
   path: '/info',
   component: Layout,
   redirect: '/info/index',
@@ -172,32 +133,7 @@ export default [{
         import( /* webpackChunkName: "views" */ '@/views/contract/salesContractDetail')
     }]
   },
-  {
-    path: '/billManage',
-    component: Layout,
-    children: [{
-      path: 'poOrder/add',
-      name: 'PO订单申请',
-      meta: {
-        i18n: 'work'
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/billManage/poOrder/add')
-    }]
-  }, {
-    path: '/partsMaintAdd',
-    component: Layout,
-    redirect: '/contract/partsMaintAdd',
-    children: [{
-      path: '/partsMaintAdd',
-      name: '零件维护申请',
-      meta: {
-        i18n: 'work'
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/contract/partsMaintenance/addOrUpdateOrDetail/index')
-    }]
-  },
+ 
   {
     path: '/partsMaintSubAdd',
     component: Layout,
@@ -296,78 +232,10 @@ export default [{
       component: () =>
         import( /* webpackChunkName: "views" */ '@/views/contract/contractBOMBuyAdd')
     }]
-  }, {
-    path: '/contractLicenseAdd',
-    component: Layout,
-    redirect: '/contract/contractLicenseAdd',
-    children: [{
-      path: '/contractLicenseAdd',
-      name: 'license付款申请',
-      meta: {
-        i18n: 'work',
-        keepAlive:true
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/contract/contractLicenseAdd')
-    }]
-  }, {
-    path: '/contractCustomerAdd',
-    component: Layout,
-    redirect: '/contract/contractCustomerAdd',
-    children: [{
-      path: '/contractCustomerAdd',
-      name: '客户信息',
-      meta: {
-        i18n: 'work',
-        keepAlive:true,
-        alias:'Customer Info'
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/contract/contractCustomerAdd')
-    }]
-  },
-  {
-    path: '/photoWallAdd',
-    component: Layout,
-    redirect: '/oa/photoWallAdd',
-    children: [{
-      path: '/photoWallAdd',
-      name: '照片墙',
-      meta: {
-        i18n: 'work'
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/oa/photoWall/addOrUpdate')
-    }]
-  },
-  {
-    path: '/billManage/poOrder',
-    component: Layout,
-    children: [{
-      path: 'invoice',
-      name: '发票申请',
-      meta: {
-        i18n: 'work',
-        keepAlive:true
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/billManage/poOrder/invoice')
-    }]
-  },
-  {
-    path: '/billManage/poOrder',
-    component: Layout,
-    children: [{
-      path: 'invoiceView',
-      name: '查看发票',
-      meta: {
-        i18n: 'work',
-        keepAlive:true
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/billManage/poOrder/invoiceView')
-    }]
-  },
+  }, 
+
+
+  
   // {
   //   path: '/myMeetingAdd',
   //   component: Layout,
