@@ -1482,48 +1482,9 @@ export default [{
         import( /* webpackChunkName: "flow-generalContract" */ '@/views/oa/generalContract/index')
     }]
   },
-  {
-    path: '/newsBulletin/list',
-    component: Layout,
-    redirect: '/oa/newsBulletin/list',
-    children: [{
-      path: '/newsBulletin/list',
-      name: '公司新闻列表',
-      meta:{
-        alias:"Corporate News"
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/oa/newsBulletin/list')
-    }]
-  },
-  {
-    path: '/newsBulletin/addorupdate',
-    component: Layout,
-    redirect: '/oa/newsBulletin/addorupdate',
-    children: [{
-      path: '/newsBulletin/addorupdate',
-      name: '添加公司新闻',
-      meta:{
-        alias:"Add Corporate News"
-      },
-      component: () =>
-        import('@/views/oa/newsBulletin/addorupdate')
-    }]
-  },
-  {
-    path: '/newsBulletin/details',
-    component: Layout,
-    redirect: '/oa/newsBulletin/details',
-    children: [{
-      path: '/newsBulletin/details',
-      name: '公司新闻详情',
-      meta:{
-        alias:"Corporate News Details"
-      },
-      component: () =>
-        import('@/views/oa/newsBulletin/details')
-    }]
-  },
+  
+  
+  
   {
     path: '/orderManageAdd',
     component: Layout,
@@ -1663,51 +1624,9 @@ export default [{
         import( /* webpackChunkName: "flow-subStorageOut" */ '@/views/oa/warehouseApply/subStorageOut')
     }]
   },
-  {
-    path: '/lightCtrlOperationRecords',
-    component: Layout,
-    redirect: '/oa/lightCtrlOperationRecords',
-    children: [{
-      path: '/lightCtrlOperationRecords',
-      name: '远程灯控',
-      meta: {
-        i18n: 'work',
-        keepAlive:false
-      },
-      component: () =>
-        import( /* webpackChunkName: "lightCtrl" */ '@/views/oa/lightctrl/lightCtrlOperationRecords')
-    }]
-  },
-  {
-    path: '/lightCtrlSchedules',
-    component: Layout,
-    redirect: '/oa/lightCtrlSchedules',
-    children: [{
-      path: '/lightCtrlSchedules',
-      name: '灯控定时',
-      meta: {
-        i18n: 'work',
-        keepAlive:false
-      },
-      component: () =>
-        import( /* webpackChunkName: "lightCtrl" */ '@/views/oa/lightctrl/lightCtrlSchedules')
-    }]
-  },
-  {
-    path: '/lightCtrlAreaDeviceMap',
-    component: Layout,
-    redirect: '/oa/lightCtrlAreaDeviceMap',
-    children: [{
-      path: '/lightCtrlAreaDeviceMap',
-      name: '远程灯控',
-      meta: {
-        i18n: 'work',
-        keepAlive:false
-      },
-      component: () =>
-        import( /* webpackChunkName: "lightCtrl" */ '@/views/oa/lightctrl/lightCtrlAreaDeviceMap')
-    }]
-  },
+  
+  
+  
   {
     path: '/app_privacy',
     name: 'PrivacyPolicy',

@@ -56,7 +56,6 @@
 
 <script>
 import FloorLockApi from '@/api/floorLock/index'
-import Upload from '@/views/oa/photoWall/upload'
 import autoAddress from '@/components/autoAddress/index'
 export default {
     data() {
@@ -90,7 +89,7 @@ export default {
     created() {
         this.getList()
     },
-    components: { Upload, autoAddress },
+    components: {  autoAddress },
     methods: {
         async getList() {
             let res = await FloorLockApi.getList()
