@@ -10,11 +10,6 @@ const assetsManage = [
         iconImg:'svg/address/ico_gwgl.svg'
     },
     {
-      tabName:"inventoryReport",
-      name:"零件盘点报告",
-      iconImg:'svg/myflow/ico_ybsy.svg'
-    },
-    {
         tabName:"warehouseManagement",
         name:"零件库房统计",
         iconImg:'svg/myflow/ico_wdqq.svg'

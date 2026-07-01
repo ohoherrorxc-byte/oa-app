@@ -8,7 +8,6 @@
                 <infoManagement v-if="curTab==='infoManagement'"></infoManagement>
                 <bomManagement v-if="curTab==='bomManagement'"></bomManagement>
                 <inventory v-if="curTab==='inventory'"></inventory>
-                <inventoryReport v-if="curTab==='inventoryReport'"></inventoryReport>
                 <warehouseManagement v-if="curTab==='warehouseManagement'"></warehouseManagement>
             </el-col>
         </el-row>
@@ -21,7 +20,6 @@ import bomManagement from './bomManagement.vue';
 import inventory from './inventory'
 import infoManagement from './infoManagement.vue';
 import warehouseManagement from './warehouseManagement.vue';
-import inventoryReport from "./inventoryReport";
 
 export default {
     data(){
@@ -30,7 +28,7 @@ export default {
         }
     },
     components:{
-        leftBar,infoManagement,bomManagement,warehouseManagement,inventory, inventoryReport
+        leftBar,infoManagement,bomManagement,warehouseManagement,inventory
     },
     methods:{
         getTab(key) {

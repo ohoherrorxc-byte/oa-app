@@ -3,7 +3,7 @@
     <p class="title-apply">全部应用</p>
     <el-row :gutter="22" class="plr25 prr25 pbr20">
       <el-col :span="6" class="pointer">
-        <p class="list-apply flex flex-center" @click="toCheck">
+        <p class="list-apply flex flex-center">
           <img class="icon-svg mrr15" src="./svg/ico_ kaoqin.svg" />考勤管理
         </p>
       </el-col>
@@ -77,9 +77,6 @@ export default {
     return {};
   },
   methods: {
-    toCheck(){
-      this.$router.push("/oa/checkingIn/myCheckingIn/index");
-    },
     toPerson(){
       this.$router.push("/oa/addressBook/index");
     },

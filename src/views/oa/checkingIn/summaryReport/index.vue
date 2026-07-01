@@ -35,7 +35,7 @@
         <el-table :data="data" v-loading="loading">
             <el-table-column v-if="item.display !== false" align='center' v-for="item in option.column" :label="item.label" :key='item'>
                             <template slot-scope="scope">
-                                <div v-if="item.prop === 'realName'" @click="goToDetail(scope.row)" :style="{cursor: 'pointer', color: '#409EFF'}">{{ scope.row[item.prop] }}</div>
+                                <div v-if="item.prop === 'realName'">{{ scope.row[item.prop] }}</div>
                                 <div v-else-if="!item.children" :style="item.cellStyle">{{ scope.row[item.prop] }}</div>
                             </template>
                 <el-table-column align='center' v-if="item.children" v-for="subItem in item.children" :label="subItem.label"
@@ -441,10 +441,6 @@ export default {
         },
         refreshChange() {
             this.onLoad(this.page, this.query)
-        },
-        goToDetail(row) {
-            let url = `/oa/checkingIn/myCheckingIn/index?userId=${row.userId}&month=${this.form.month}&userName=${row.realName}`;
-            window.open(this.$router.resolve({ path: url }).href, "_blank");
         },
     }
 }

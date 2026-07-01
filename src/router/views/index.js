@@ -1803,22 +1803,6 @@ export default [{
     ]
   },
   {
-    path: '/workReport/index',
-    component: Layout,
-    redirect: '/oa/workReport',
-    children: [{
-      path: '/workReport',
-      name: '工作报表',
-      meta: {
-        i18n: 'work',
-        keepAlive:true,
-        alias:"BOM & Framework Procurement Contract Order Review"
-      },
-      component: () =>
-        import( /* webpackChunkName: "flow-bomPurchaseApplication" */ '@/views/oa/workReport/index')
-    }]
-  },
-  {
     path: '/bomChangeApply',
     component: Layout,
     redirect: '/oa/bomChangeApply',

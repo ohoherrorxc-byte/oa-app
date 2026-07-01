@@ -9,6 +9,7 @@ coverage/
 # Static assets
 public/
 
+
 # ───── 环境与本地配置（任何含密钥的文件都不入库） ─────
 .env
 .env.*
