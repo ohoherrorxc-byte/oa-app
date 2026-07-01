@@ -210,7 +210,8 @@ import PurchaseApplyApi from "@/api/purchaseApply/index";
 import UserApi from '@/api/organizationalStructure/user.js'
 import upload from '@/components/upload/index'
 import { mergePDFs } from "@/util/util";
-import printJS from "print-js";
+// 打印功能已停用
+// import printJS from "print-js";
 export default {
   mixins: [mixins],
   components: { upload },
@@ -349,11 +350,12 @@ export default {
       // console.log(pdfBlobs)
       // Merge PDFs and print
       const mergedPdf = await mergePDFs(pdfBlobs);
-      printJS({
-        printable: URL.createObjectURL(mergedPdf),
-        type: 'pdf',
-        showModal: true
-      });
+      // printJS({
+      //   printable: URL.createObjectURL(mergedPdf),
+      //   type: 'pdf',
+      //   showModal: true
+      // });
+      // 打印功能已停用
     },
     async getSupplier() {
       let res = await UserApi.contractSupplierAll('')

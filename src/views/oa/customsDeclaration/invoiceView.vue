@@ -187,8 +187,9 @@
   </template>
 
   <script>
-  import { toJpeg } from "html-to-image";
-  import print from "print-js";
+  // 打印功能已停用
+  // import { toJpeg } from "html-to-image";
+  // import print from "print-js";
   import { invoiceDetail } from "@/api/billManage/poOrder";
   import { mapGetters } from "vuex";
 
@@ -238,16 +239,7 @@
     },
     methods: {
       handlePrint() {
-        toJpeg(document.getElementById("print"), { quality: 0.99, width: 790, backgroundColor: '#ffffff' }).then(
-          (dataUrl) => {
-            print({
-              printable: dataUrl,
-              type: "image",
-              base64: true,
-              style: `@media print { @page {size: auto; margin: 30; } body{margin:0 5px;padding: 20px;}}`,
-            });
-          }
-        );
+        // 打印功能已停用（保留方法签名）
       },
  
       init() {

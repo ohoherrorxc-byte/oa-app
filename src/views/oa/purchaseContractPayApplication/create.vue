@@ -424,7 +424,7 @@
         ></upload>
       </el-form-item>
       <el-form>
-        <el-form-item>
+        <!-- <el-form-item>
           <div class="flex">
             <el-button type="primary" v-if="disabled" @click="downBranch"
               >批量打印文件</el-button
@@ -433,7 +433,7 @@
               >打印所有文件</el-button
             >
           </div>
-        </el-form-item>
+        </el-form-item> -->
       </el-form>
     </el-form>
     <viewAllFile ref="viewAllFile"></viewAllFile>
@@ -454,7 +454,8 @@ import AcceptApplyApi from "@/api/acceptApply/index";
 import upload from "@/components/upload/index";
 import PurchaseContractApplyApi from "@/api/purchaseContractApply/index";
 import { getContractSupplierList } from "@/api/contract/contractSupplier";
-import printJS from "print-js";
+// 打印功能已停用
+// import printJS from "print-js";
 import viewAllFile from "../bomPurchaseContractPayApplication/viewAllFile";
 export default {
   mixins: [mixins],
@@ -693,25 +694,25 @@ export default {
         this.form.totalAmountRmb || 0
       );
     },
-    async downBranch() {
-      let arr = this.form.completionOrderList.concat(this.form.invoiceList);
-      const pdfBlobs = await Promise.all(
-        arr.map(async (file) => {
-          const url = file.temUrl || file.url;
-          const response = await fetch(url);
-          return response.blob();
-        })
-      );
+    // async downBranch() {
+    //   let arr = this.form.completionOrderList.concat(this.form.invoiceList);
+    //   const pdfBlobs = await Promise.all(
+    //     arr.map(async (file) => {
+    //       const url = file.temUrl || file.url;
+    //       const response = await fetch(url);
+    //       return response.blob();
+    //     })
+    //   );
 
-      // Merge PDFs and print
-      const mergedPdf = await mergePDFs(pdfBlobs);
+    //   // Merge PDFs and print
+    //   const mergedPdf = await mergePDFs(pdfBlobs);
 
-      printJS({
-        printable: URL.createObjectURL(mergedPdf),
-        type: "pdf",
-        showModal: true,
-      });
-    },
+    //   printJS({
+    //     printable: URL.createObjectURL(mergedPdf),
+    //     type: "pdf",
+    //     showModal: true,
+    //   });
+    // },
     getOriginalAmountToTal() {
       if (
         !this.form["purchaseContractPayDetailList"] ||

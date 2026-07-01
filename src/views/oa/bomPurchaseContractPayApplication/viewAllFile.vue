@@ -15,16 +15,17 @@
                 </div>
             </div>
         </div>
-        <div class="text-center">
+        <!-- <div class="text-center">
             <el-button type="primary" @click="downBranch">一键打印</el-button>
-        </div>
+        </div> -->
     </el-dialog>
 </template>
 
 <script>
 import {  downloadFileBlob, isPDF, mergePDFs } from '@/util/util'
 import BomPurchaseContractApplyApi from '@/api/bomPurchaseContractPayApply/index'
-import printJS from "print-js";
+// 打印功能已停用（从首屏 vendors 移除 print-js）
+// import printJS from "print-js";
 export default {
     data() {
         return {
@@ -126,12 +127,12 @@ export default {
                 })
             );
             // Merge PDFs and print
-            const mergedPdf = await mergePDFs(pdfBlobs);
-            printJS({
-                printable: URL.createObjectURL(mergedPdf),
-                type: 'pdf',
-                showModal: true
-            });
+            // const mergedPdf = await mergePDFs(pdfBlobs);
+            // printJS({
+            //     printable: URL.createObjectURL(mergedPdf),
+            //     type: 'pdf',
+            //     showModal: true
+            // });
 
         },
     }

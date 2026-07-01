@@ -221,9 +221,10 @@
 </template>
 <script>
 import upload from "@/components/upload/index";
-import { toJpeg } from "html-to-image";
-import print from "print-js";
 import InvoiceSet from "@/views/billManage/poOrder/invoiceSet";
+// 打印功能已停用
+// import { toJpeg } from "html-to-image";
+// import print from "print-js";
 import { invoiceDetail, invoiceStartProcess, getSalesOrderList, getCustContactList, getTaskHis, saveInvoice, invoiceUpdateDetail } from "@/api/billManage/poOrder";
 import { getDictionary } from "@/api/system/dict";
 import { getSalesContractList } from "@/api/contract/salesContractNew";
@@ -345,18 +346,18 @@ export default {
                     }&t=${new Date().getTime()}`;
             }
         },
-        handlePrint() {
-            toJpeg(document.getElementById("print"), { quality: 0.95, width: 980, backgroundColor: '#ffffff' }).then(
-                (dataUrl) => {
-                    print({
-                        printable: dataUrl,
-                        type: "image",
-                        base64: true,
-                        style: `@media print { @page {size: auto; margin: 0; } body{margin:0 5px}}`,
-                    });
-                }
-            );
-        },
+        // handlePrint() {
+        //     toJpeg(document.getElementById("print"), { quality: 0.95, width: 980, backgroundColor: '#ffffff' }).then(
+        //         (dataUrl) => {
+        //             print({
+        //                 printable: dataUrl,
+        //                 type: "image",
+        //                 base64: true,
+        //                 style: `@media print { @page {size: auto; margin: 0; } body{margin:0 5px}}`,
+        //             });
+        //         }
+        //     );
+        // },
         init() {
             this.getInvoice()
             this.getDepartment();

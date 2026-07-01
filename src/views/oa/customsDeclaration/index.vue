@@ -590,7 +590,8 @@
 import CustomsDeclarationApi from "@/api/customsDeclaration/index";
 import { downloadFileBlob, mergePDFs } from "@/util/util";
 import upload from "@/components/upload";
-import printJS from "print-js";
+// 打印功能已停用
+// import printJS from "print-js";
 import invoiceView from "./invoiceView";
 import priview from "@/components/upload/priview.vue";
 import SupplierInvoiceApi from "@/api/supplierInvoice/index";
@@ -1123,11 +1124,12 @@ export default {
         );
         pdfBlobs = pdfBlobs.concat(pdfUrlList);
         const mergedPdf = await mergePDFs(pdfBlobs);
-        printJS({
-          printable: [URL.createObjectURL(mergedPdf)],
-          type: "pdf",
-          showModal: true,
-        });
+        // printJS({
+        //   printable: [URL.createObjectURL(mergedPdf)],
+        //   type: "pdf",
+        //   showModal: true,
+        // });
+        // 打印功能已停用
         this.currForm.invoiceIds = [];
       }, 300);
     },

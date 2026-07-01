@@ -223,8 +223,9 @@
 </template>
 <script>
 import upload from "@/components/upload/index";
-import { toJpeg } from "html-to-image";
-import print from "print-js";
+// 打印功能已停用（注释掉 import + handlePrint，从首屏 vendors 移除 print-js / html-to-image）
+// import { toJpeg } from "html-to-image";
+// import print from "print-js";
 import { debounce } from "@/util/util";
 import InvoiceSet from "./invoiceSet";
 import { invoiceDetail, invoiceStartProcess, getSalesOrderList, getCustContactList, getTaskHis, saveInvoice } from "@/api/billManage/poOrder";
@@ -297,16 +298,7 @@ export default {
       }
     },
     handlePrint() {
-      toJpeg(document.getElementById("print"), { quality: 0.95, width: 980, backgroundColor: '#ffffff' }).then(
-        (dataUrl) => {
-          print({
-            printable: dataUrl,
-            type: "image",
-            base64: true,
-            style: `@media print { @page {size: auto; margin: 0; } body{margin:0 5px}}`,
-          });
-        }
-      );
+      // 打印功能已停用（保留方法签名避免破坏模板绑定，无操作即可）
     },
     updateSaleContract() {
       let row = this.salesContractList.find(ele => {

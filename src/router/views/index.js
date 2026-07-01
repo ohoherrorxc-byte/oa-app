@@ -1470,9 +1470,6 @@ export default [{
         import( /* webpackChunkName: "flow-generalContract" */ '@/views/oa/generalContract/index')
     }]
   },
-  
-  
-  
   {
     path: '/orderManageAdd',
     component: Layout,
@@ -1487,37 +1484,6 @@ export default [{
       },
       component: () =>
         import( /* webpackChunkName: "views" */ '@/views/substitute/orderManage/addOrUpdate')
-    }]
-  },
-  {
-    path: '/assetsDetail',
-    component: Layout,
-    redirect: '/assetManagement/assetsDetail',
-    children: [{
-      path: '/assetsDetail',
-      name: '资产详情',
-      meta: {
-        i18n: 'work',
-        keepAlive:false,
-        alias:""
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/oa/assetManagement/assetsDetail')
-    }]
-  },
-  {
-    path: '/partsDetails',
-    component: Layout,
-    redirect: '/partsManagement/partsDetails',
-    children: [{
-      path: '/partsDetails',
-      name: '零件详情',
-      meta: {
-        i18n: 'work',
-        keepAlive:false
-      },
-      component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/oa/partsManagement/partsDetails')
     }]
   },
   {

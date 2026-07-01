@@ -57,12 +57,12 @@
       "
     >
       <div class="text-center flex">
-        <el-button type="primary" @click="exportToPdf()">{{
+        <!-- <el-button type="primary" @click="exportToPdf()">{{
           $t("flow.exportPDF")
-        }}</el-button>
-        <el-button type="primary" @click="handlePrint">{{
+        }}</el-button> -->
+        <!-- <el-button type="primary" @click="handlePrint">{{
           $t("flow.print")
-        }}</el-button>
+        }}</el-button> -->
       </div>
     </div>
     <basic-container class="w-100" v-loading="loading">
@@ -336,8 +336,8 @@ import { generateFormReqHeader } from "@/util/form-auth";
 import tableForm from "./tableForm";
 import FormEditorApi from "@/api/formEditor/index";
 import { customDetail } from "@/api/myFlow/operate/detail";
-import { toJpeg } from "html-to-image";
-import print from "print-js";
+// html-to-image + print-js 改 dynamic import（见 handlePrint）
+// 这两个包只在用户点"打印"时才需要，加在 flow chunk 顶层 import 会拖慢流程页加载
 import PurchaseCommissionDecisionApplyApi from "@/api/purchaseCommissionDecisionApplication/index";
 export default {
   mixins: [mixins],
@@ -750,36 +750,42 @@ export default {
     reflesh() {
       this.$refs.formRef.getDetail();
     },
-    handlePrint() {
-      this.isPdfDown = true;
-      this.isPrinf = true;
-      let container = document.getElementById("container");
-      var width = 800;
-      let that = this;
-      setTimeout(() => {
-        toJpeg(container, {
-          quality: 0.99,
-          width: width,
-          backgroundColor: "#ffffff",
-        }).then((dataUrl) => {
-          print({
-            printable: dataUrl,
-            type: "image",
-            base64: true,
-            style: `@media print { @page {size: auto; margin: 10mm 0 15mm 0;display:block;page-break-inside: avoid;} body{margin:0 5px}}`,
-          });
-          that.isPrinf = false;
-          that.isPdfDown = false;
-        });
-      }, 300);
-    },
-    exportToPdf() {
-      this.exportPDF = false;
-      this.isPdfDown = true;
-      // PDF 导出功能已移除（html2pdf 依赖被清理）
-      this.exportPDF = true;
-      this.isPdfDown = false;
-    },
+    // async handlePrint() {
+    //   this.isPdfDown = true;
+    //   this.isPrinf = true;
+    //   // html-to-image (~500KB) + print-js (~180KB) 改为 dynamic import，
+    //   // 仅在用户点击"打印"时才下载，避免 flow chunk 首屏就背着这俩
+    //   const [{ toJpeg }, { default: print }] = await Promise.all([
+    //     import('html-to-image'),
+    //     import('print-js')
+    //   ])
+    //   let container = document.getElementById("container");
+    //   var width = 800;
+    //   let that = this;
+    //   setTimeout(() => {
+    //     toJpeg(container, {
+    //       quality: 0.99,
+    //       width: width,
+    //       backgroundColor: "#ffffff",
+    //     }).then((dataUrl) => {
+    //       print({
+    //         printable: dataUrl,
+    //         type: "image",
+    //         base64: true,
+    //         style: `@media print { @page {size: auto; margin: 10mm 0 15mm 0;display:block;page-break-inside: avoid;} body{margin:0 5px}}`,
+    //       });
+    //       that.isPrinf = false;
+    //       that.isPdfDown = false;
+    //     });
+    //   }, 300);
+    // },
+    // exportToPdf() {
+    //   this.exportPDF = false;
+    //   this.isPdfDown = true;
+    //   // PDF 导出功能已移除（html2pdf 依赖被清理）
+    //   this.exportPDF = true;
+    //   this.isPdfDown = false;
+    // },
     //通过子组件获取表单详情内容
     getFormData(data) {
       this.formData = data;

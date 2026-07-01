@@ -428,7 +428,8 @@ import BomPurchaseContractPayApplyApi from "@/api/bomPurchaseContractPayApply/in
 import PurchaseContractPayApplyApi from "@/api/purchaseContractPayApply/index";
 import { getContractSupplierList } from "@/api/contract/contractSupplier";
 import viewAllFile from "./viewAllFile";
-import printJS from "print-js";
+// 打印功能已停用
+// import printJS from "print-js";
 
 export default {
   mixins: [mixins, mixinsAmount],
@@ -915,11 +916,12 @@ export default {
       );
       // Merge PDFs and print
       const mergedPdf = await mergePDFs(pdfBlobs);
-      printJS({
-        printable: URL.createObjectURL(mergedPdf),
-        type: "pdf",
-        showModal: true,
-      });
+      // printJS({
+      //   printable: URL.createObjectURL(mergedPdf),
+      //   type: "pdf",
+      //   showModal: true,
+      // });
+      // 打印功能已停用
     },
     handleRequestBomOrderFile(data, arr) {
       arr.map((ele) => {

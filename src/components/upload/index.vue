@@ -53,7 +53,7 @@ import {
   isPDF,
   getFormatDate,
 } from "@/util/util";
-import printJS from "print-js";
+// import printJS from "print-js";
 // PreviewPdf 不再顶层 import：仅在加水印分支才需要,改为 dynamic import
 import { mapGetters } from "vuex";
 // priview 也改为异步组件：它内部引用 pdfvuer + pdfjs,延迟到真正打开预览对话框才下载
@@ -189,15 +189,15 @@ export default {
       this.$emit("handleRequest", "", this.dataList, file);
       this.$emit("handleChange", this.dataList);
     },
-    handlePrint() {
-      printJS({
-        printable: "img-print",
-        type: "html",
-        header: null,
-        imageStyle: `@page { size: auto;  margin: 0mm;page-break-inside: avoid;
-    page-break-after: always; }`,
-      });
-    },
+    // handlePrint() {
+    //   printJS({
+    //     printable: "img-print",
+    //     type: "html",
+    //     header: null,
+    //     imageStyle: `@page { size: auto;  margin: 0mm;page-break-inside: avoid;
+    // page-break-after: always; }`,
+    //   });
+    // },
     down() {
       console.log(this.choostUrl);
       let url = this.choostUrl.temUrl || this.choostUrl.url;

@@ -532,8 +532,9 @@
 
 <script>
 import upload from "@/components/upload/index";
-import { toJpeg } from "html-to-image";
-import print from "print-js";
+// 打印功能已停用
+// import { toJpeg } from "html-to-image";
+// import print from "print-js";
 import InvoiceSet from "@/views/billManage/poOrder/invoiceSet";
 import {
   invoiceDetail,
@@ -703,18 +704,7 @@ export default {
       this.partsList = res.data.data;
     },
     handlePrint() {
-      toJpeg(document.getElementById("print"), {
-        quality: 0.95,
-        width: 980,
-        backgroundColor: "#ffffff",
-      }).then((dataUrl) => {
-        print({
-          printable: dataUrl,
-          type: "image",
-          base64: true,
-          style: `@media print { @page {size: auto; margin: 0; } body{margin:0 5px}}`,
-        });
-      });
+      // 打印功能已停用（保留方法签名避免破坏模板绑定）
     },
     changeQuantity(row){
       let match = false
