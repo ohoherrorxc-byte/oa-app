@@ -23,7 +23,7 @@ export default {
             default: false,
         },
         slotForm: {
-            type: "Object"
+            type: Object
         }
     },
     components: { autoAddress },

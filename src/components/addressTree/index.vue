@@ -147,7 +147,7 @@ export default {
         },
         getChildrenName(data) {
             // 防御性：递归遍历时父/子节点都可能是 null
-            ;(data || []).map(ele => {
+            (data || []).map(ele => {
                 if (ele.userList) {
                     ele.children = ele.userList
                 }

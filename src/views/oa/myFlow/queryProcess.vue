@@ -37,7 +37,7 @@
 <script>
 import list from './components/list.vue'
 import elSelectTree from './components/elSelectTree'
-import { getList, getListQuery, flowTaskExport } from '@/api/myFlow/index'
+import {  getListQuery, flowTaskExport } from '@/api/myFlow/index'
 import dictionaryApi from '@/api/dictionary'
 import { downBlobFile } from "@/util/util";
 export default {

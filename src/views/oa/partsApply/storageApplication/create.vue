@@ -446,7 +446,7 @@ export default {
       // val 是选中的 item.Name
       // 根据 val（item.id）找到对应的 item，进而拿到 titleName
       this.form.purchaseRequestId = "";
-      if (!!val){
+      if (val){
         const selectedItem = this.purchaseApplyList.find(item => item.titleName === val);
         if (selectedItem) {
           this.form.purchaseRequestId = selectedItem.id;

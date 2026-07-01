@@ -1012,7 +1012,7 @@ export default {
         this.getInvoice(row);
       }
     },
-    async getInvoice(row) {;
+    async getInvoice(row) {
       let res = await PurchaseContractPayApplyApi.getInvoiceList(
         row.bomPurchaseOrderNo
       );

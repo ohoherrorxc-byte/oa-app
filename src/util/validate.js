@@ -240,7 +240,7 @@ export function validatenNum(rule, value, callback) {
     } else {
         callback();
     }
-};
+}
 
 /**
  * 判断是否为空
