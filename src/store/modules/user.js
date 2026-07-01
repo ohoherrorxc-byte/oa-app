@@ -8,7 +8,6 @@ import { loginByUsername, loginBySocial, getUserInfo, logout, refreshToken, getB
 import { getTopMenu, getRoutes } from '@/api/system/menu'
 import md5 from 'js-md5'
 import { baseUrl } from "@/config/env";
-import { destroyCozeWebChat } from '@/util/cozeWebChat';
 
 
 function addPath(ele, first) {
@@ -136,7 +135,6 @@ const user = {
     // 登出
     LogOut({ commit }) {
       return new Promise((resolve, reject) => {
-        destroyCozeWebChat();
         logout().then(() => {
           commit('SET_TOKEN', '');
           commit('SET_MENU', []);
@@ -156,7 +154,6 @@ const user = {
     //注销session
     FedLogOut({ commit }) {
       return new Promise(resolve => {
-        destroyCozeWebChat();
         commit('SET_TOKEN', '');
         commit('SET_MENU_ALL_NULL', []);
         commit('SET_MENU', []);

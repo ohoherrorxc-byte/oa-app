@@ -53,7 +53,6 @@ import tableForm from './components/tableForm';
 // 改成下面 Vue.component('avueUeditor', ...) 时按需 import
 import website from '@/config/website';
 import crudCommon from '@/mixins/crud';
-import { initCozeWebChat } from '@/util/cozeWebChat';
 // import VideoPlayer from 'vue-video-player'
 // import 'vue-video-player/src/custom-theme.css'
 // import 'video.js/dist/video-js.css'
@@ -174,4 +173,3 @@ new Vue({
   render: h => h(App)
 }).$mount('#app');
 
-initCozeWebChat();
