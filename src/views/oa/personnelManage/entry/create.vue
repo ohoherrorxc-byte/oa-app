@@ -29,7 +29,6 @@
 <script>
 import addressBookDialog from "@/components/addressBookDialog/index";
 import AddressApi from "@/api/organizationalStructure/address";
-import UserApi from "@/api/organizationalStructure/user.js";
 import EntryWorkshopApi from "@/api/entryWorkshop/index.js";
 import { mapGetters } from "vuex";
 import OtherApi from '@/api/organizationalStructure/other'
@@ -199,12 +198,15 @@ export default {
     },
 
     async getPersonList(name) {
-      let res = await UserApi.userAllList(name);
-      let arr = res.data.data;
-      arr.map((ele) => {
-        ele.value = ele.realName;
-      });
-      return arr;
+      // 走 vuex 缓存的全量用户列表，前端按 realName 模糊匹配；
+      // 与其它页面的 5 个 autoAddress / acceptApply 共享同一个缓存，避免重复请求
+      const all = await this.$store.dispatch('GetUserAllList')
+      const query = (name && name.realName) ? String(name.realName).toLowerCase() : ''
+      const arr = query
+        ? all.filter(ele => ele.realName && String(ele.realName).toLowerCase().includes(query))
+        : all
+      arr.forEach(ele => { ele.value = ele.realName })
+      return arr
     },
 
     canAccessControlNo() {

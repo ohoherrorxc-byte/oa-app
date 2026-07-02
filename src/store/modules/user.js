@@ -6,6 +6,7 @@ import { deepClone } from '@/util/util'
 import website from '@/config/website'
 import { loginByUsername, loginBySocial, getUserInfo, logout, refreshToken, getButtons } from '@/api/user'
 import { getTopMenu, getRoutes } from '@/api/system/menu'
+import UserApi from '@/api/organizationalStructure/user'
 import md5 from 'js-md5'
 import { baseUrl } from "@/config/env";
 
@@ -46,8 +47,25 @@ const user = {
     refreshToken: getStore({ name: 'refreshToken' }) || '',
     isFleet: getStore({ name: 'isFleet' }) || '',
     isSaic: getStore({ name: 'isSaic' }) || '',
+    // 用户全量列表（acceptApply 5 个 autoAddress + getUserList 共 6 次同接口调用 → 收敛为 1 次）
+    userAllList: [],
+    userAllListLoaded: false,
   },
   actions: {
+    // 获取全量用户列表（带缓存，避免 5+ 次重复请求）
+    GetUserAllList({ commit, state }, force = false) {
+      // 已有缓存直接返回 promise resolve
+      if (state.userAllListLoaded && !force && state.userAllList.length > 0) {
+        return Promise.resolve(state.userAllList)
+      }
+      return new Promise((resolve, reject) => {
+        UserApi.userAllList().then(res => {
+          const data = (res && res.data && res.data.data) || []
+          commit('SET_USER_ALL_LIST', data)
+          resolve(data)
+        }).catch(err => reject(err))
+      })
+    },
     //根据用户名登录
     LoginByUsername({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
@@ -280,6 +298,10 @@ const user = {
     },
     SET_ROLES: (state, roles) => {
       state.roles = roles;
+    },
+    SET_USER_ALL_LIST: (state, list) => {
+      state.userAllList = list || [];
+      state.userAllListLoaded = !!(list && list.length > 0);
     },
     SET_PERMISSION: (state, permission) => {
       let result = [];

@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import UserApi from '@/api/organizationalStructure/user.js'
 import addressBookDialog from '@/components/addressBookDialog/index'
+import { mapGetters } from 'vuex'
 export default {
     props: {
         multiple: {
@@ -57,6 +57,9 @@ export default {
             allList: []
         }
     },
+    computed: {
+        ...mapGetters(['userAllList', 'userAllListLoaded'])
+    },
     components: {
         addressBookDialog
     },
@@ -88,10 +91,11 @@ export default {
     },
     methods: {
         async init() {
-            let res = await UserApi.userAllList()
-            console.log(res)
-            this.allList = res.data.data
-            this.$emit('allUserList',this.allList)
+            // 走 vuex action 拿全量用户列表：acceptApply 里 5 个 autoAddress 同时挂载，
+            // 但只会发出 1 次接口请求，其余 4 个直接命中缓存
+            let list = await this.$store.dispatch('GetUserAllList')
+            this.allList = list
+            this.$emit('allUserList', list)
         },
         getInitData(initList,id){
             this.userList = initList
@@ -102,13 +106,15 @@ export default {
             this.$refs.addressBookDialog.dealCheck()
         },
         async remoteMethod(query) {
-            if (query !== '') {
-                this.loading = true;
-                let res = await UserApi.userAllList({ realName: query })
-                this.loading = false
-                this.userList = res.data.data
+            // 改为前端过滤：避免每次输入都打后端
+            if (query !== '' && this.allList.length > 0) {
+                const q = String(query).toLowerCase()
+                this.userList = this.allList.filter(ele =>
+                    (ele.realName && String(ele.realName).toLowerCase().includes(q)) ||
+                    (ele.userName && String(ele.userName).toLowerCase().includes(q))
+                )
             } else {
-                this.userList = [];
+                this.userList = []
             }
         },
         getPersonChange() {

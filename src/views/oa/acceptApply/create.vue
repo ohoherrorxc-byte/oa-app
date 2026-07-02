@@ -643,7 +643,6 @@ import PurchaseContractApplyApi from "@/api/purchaseContractApply/index";
 import BomPurchaseContractApplyApi from "@/api/bomPurchaseContractApply/index";
 import BomPurchaseOrderApplyApi from "@/api/bomPurchaseOrderApply/index";
 import { getDictionary } from "@/api/system/dict";
-import { userList } from "@/api/contract/bomMaint";
 import { getLazyList, getDept } from "@/api/organizationalStructure/department";
 import { getProjectList } from "@/api/contract/contractProject";
 import { mapGetters } from "vuex";
@@ -1523,8 +1522,9 @@ export default {
       });
     },
     getUserList() {
-      userList(this.tenantId).then((res) => {
-        this.userList = res.data.data;
+      // 走 vuex action，与 5 个 autoAddress 共享同一个全量用户列表缓存
+      this.$store.dispatch('GetUserAllList').then(list => {
+        this.userList = list;
       });
     },
     getContractProjectList() {
