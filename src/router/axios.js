@@ -15,7 +15,20 @@ import website from '@/config/website';
 import {Base64} from 'js-base64';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import { env } from '@/config/env';
 
+if (process.env.VUE_APP_BASE_API) {
+  axios.defaults.baseURL = process.env.VUE_APP_BASE_API;
+}
+console.log(env)
+console.log(env+'环境下的接口地址为：'+axios.defaults.baseURL)
+axios.interceptors.request.use(config => {
+  if(env.NODE_ENV==='development')return config;
+  if (config.url && typeof config.url === 'string' && config.url.startsWith('/api/')) {
+    config.url = config.url.slice(4); // 去掉开头的 '/api'，保留后面的 '/'
+  }
+  return config;
+});
 //默认超时时间
 axios.defaults.timeout = 1000000;
 //返回其他状态码

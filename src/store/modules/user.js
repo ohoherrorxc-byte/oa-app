@@ -298,7 +298,8 @@ const user = {
         })
       }
 
-      getCode(permission);
+      // 兜底：permission 可能为 undefined（接口异常、空权限、未登录态被前置拦截等）
+      getCode(Array.isArray(permission) ? permission : []);
       state.permission = {};
       result.forEach(ele => {
         state.permission[ele] = true;
