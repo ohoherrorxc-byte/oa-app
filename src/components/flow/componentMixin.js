@@ -1,94 +1,84 @@
 
-import purchaseApproval from '@/views/oa/purchaseApproval/components/add'
-import budgetApproval from '@/views/oa/budgetApproval/components/add'
-import firewall from '@/views/oa/operationApplication/firewall/create'
-import deviceInternetAccess from '@/views/oa/operationApplication/deviceInternetAccess/create'
-import maintenanceApply from '@/views/oa/assetsApply/maintenanceApply/create'
-import receiveApplication from '@/views/oa/assetsApply/receiveApplication/create'
-import returnApplication from '@/views/oa/assetsApply/returnApplication/create'
-import scrappingApplication from '@/views/oa/assetsApply/scrappingApplication/create'
-import storageApplication from '@/views/oa/assetsApply/storageApplication/create'
-import maintenanceParts from '@/views/oa/partsApply/maintenanceApply/create'
-import receiveParts from '@/views/oa/partsApply/receiveApplication/create'
-import returnParts from '@/views/oa/partsApply/returnApplication/create'
-import saleContractApplication from '@/views/oa/saleContractApplication/create'
-import saleContractChangeApplication from '@/views/oa/saleContractChangeApplication/create'
-import scrappingParts from '@/views/oa/partsApply/scrappingApplication/create'
-import storageParts from '@/views/oa/partsApply/storageApplication/create'
-import saleParts from '@/views/oa/partsApply/saleApply/create'
-import purchaseParts from '@/views/oa/partsApply/purchaseApply/create'
-import committeeProcurement from '@/views/oa/purchaseManage/generalPurchase/create'
-import generalPurchase from '@/views/oa/purchaseManage/generalPurchase/create'
-import contractReview from '@/views/oa/purchaseManage/contractReview/create'
-import releaseBudget from '@/views/oa/purchaseManage/releaseBudget/create'
-import onBusinessTrip from '@/views/oa/financialManagement/onBusinessTrip/create'
-import  travelReimbursement from '@/views/oa/financialManagement/travelReimbursement/create'
-import cityTraffic from '@/views/oa/financialManagement/cityTraffic/create'
-import entryWorkshop from '@/views/oa/personnelManage/entry/create'
-import dimission from '@/views/oa/personnelManage/dimission/create'
-import workOvertime from '@/views/oa/personnelManage/workOvertime/create'
-import cardReplacement from '@/views/oa/personnelManage/cardReplacement/create'
-import askForLeave from '@/views/oa/personnelManage/askForLeave/create'
-import invoiceApplication from '@/views/oa/invoiceApplication/create'
-import saleOrderApplication from '@/views/oa/saleOrderApplication/create'
-import invoiceChangeApplication from '@/views/oa/invoiceChangeApplication/create'
-import purchaseApplication from '@/views/oa/purchaseApplication/create'
-import purchaseCommissionDecisionApplication from '@/views/oa/purchaseCommissionDecisionApplication/create'
-import miscellaneousCost from '@/views/oa/financialManagement/miscellaneousCost/create'
-import subscriptionApplication from '@/views/oa/subscriptionApplication/create'
-import purchaseContractApplication from '@/views/oa/purchaseContractApplication/create'
-import trainingApplication from '@/views/oa/personnelManage/trainingApplication/create'
-import regularizationApply from '@/views/oa/personnelManage/regularizationApply/create'
-import transferSalaryAndPost from '@/views/oa/personnelManage/transferSalaryAndPost/create'
-import appOnline from '@/views/oa/operationApplication/appOnline/create'
-import tspInterface from '@/views/oa/operationApplication/tspInterface/create'
-import tspOnline from '@/views/oa/operationApplication/tspOnline/create'
-import businessHospitality from '@/views/oa/financialManagement/businessHospitality/create'
-import licensePurchaseContractApplication from '@/views/oa/licensePurchaseContractApplication/create'
-import bomPurchaseContractApplication from '@/views/oa/bomPurchaseContractApplication/create'
-import bomPurchaseOrderApplication from '@/views/oa/bomPurchaseOrderApplication/create'
-import unionFunds from '@/views/oa/financialManagement/unionFunds/create'
-import acceptApply from '@/views/oa/acceptApply/create'
-import generalContract from '@/views/oa/generalContract/create'
-import purchaseContractPayApplication from '@/views/oa/purchaseContractPayApplication/create'
-import bomPurchaseContractPayApplication from '@/views/oa/bomPurchaseContractPayApplication/create'
-import budgetAdditions from '@/views/oa/budgetAdditions/create'
-import invoiceApply from '@/views/oa/invoiceApply/create'
-import employeeRenewal from '@/views/oa/personnelManage/employeeRenewal/create'
-import internalTransfer from '@/views/oa/financialManagement/internalTransfer/create'
-import invoiceUpdate from '@/views/oa/invoiceUpdate/create'
-import scrapParts from '@/views/oa/warehouseApply/scrapParts/create'
-import storageIn from '@/views/oa/warehouseApply/storageIn/create'
-import bomPurchaseApplication from '@/views/oa/bomPurchaseApplication/create'
-import appOnline25 from '@/views/oa/operationApplication/appLaunchApply25/create'
-import doorAccessControl from '@/views/oa/doorAccessControl/create'
-//出入库相关页面
-// import scrapParts from '@/views/oa/warehouseApply/scrapParts/create'
-// import storageIn from '@/views/oa/warehouseApply/storageIn/create'
-import storageOut from '@/views/oa/warehouseApply/storageOut/create'
-import subStorageIn from '@/views/oa/warehouseApply/subStorageIn/create'
-import subStorageOut from '@/views/oa/warehouseApply/subStorageOut/create'
-import transferParts from '@/views/oa/partsApply/transferApplication/create'
-import fieldApplication from '@/views/oa/warehouseApply/fieldApplication/create'
-import partsPriceMaintenance from "@/views/oa/partsPriceMaintenance/create"
-import partsUpdateApply from "@/views/oa/partsUpdateApply/create"
-import supplierOrderChange from "@/views/oa/supplierOrderChange/create"
-import banknoteApply from "@/views/oa/banknoteApply/create"
-import supplierOrderStatus from '@/views/oa/supplierOrderStatus/create'
-import supplierOrderSend from "@/views/oa/supplierOrderSend/create"
-import bomChangeApply from "@/views/oa/bomChangeApply/create"
+// 业务表单组件改为 () => import() 动态加载：
+// 原本 76 个静态 import 把所有 create.vue 同步塞进 flow chunk，
+// 改异步后，flow 启动时 0 加载，<component :is="componentTag" /> 按需拉对应 chunk
+// 所有 chunk 共用 name "flow-comp" 命中同一缓存组
 
 export const mixins = {
     components: {
-        partsPriceMaintenance,partsUpdateApply,supplierOrderChange,supplierOrderStatus,supplierOrderSend,
-        purchaseApproval, budgetApproval,committeeProcurement,generalPurchase,contractReview,releaseBudget,storageOut,subStorageIn,subStorageOut,
-        firewall, deviceInternetAccess, maintenanceApply, receiveApplication,generalContract,scrapParts,storageIn,
-        returnApplication,saleContractApplication,saleContractChangeApplication, scrappingApplication, storageApplication,
-        maintenanceParts,receiveParts,returnParts,scrappingParts,storageParts,miscellaneousCost,invoiceApply,internalTransfer,
-        saleParts,purchaseParts,onBusinessTrip,travelReimbursement,cityTraffic,entryWorkshop,dimission,workOvertime,cardReplacement,askForLeave,invoiceApplication,saleOrderApplication,
-        invoiceChangeApplication,purchaseApplication,purchaseCommissionDecisionApplication,subscriptionApplication,purchaseContractApplication,
-        trainingApplication,regularizationApply,transferSalaryAndPost,unionFunds,acceptApply,budgetAdditions,transferParts,
-        appOnline,tspInterface,tspOnline,licensePurchaseContractApplication,bomPurchaseContractApplication,businessHospitality,bomPurchaseOrderApplication,
-        purchaseContractPayApplication,bomPurchaseContractPayApplication,employeeRenewal,invoiceUpdate,bomPurchaseApplication,fieldApplication,appOnline25,doorAccessControl,banknoteApply,bomChangeApply
+        purchaseApproval: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/purchaseApproval/components/add'),
+        budgetApproval: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/budgetApproval/components/add'),
+        firewall: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/operationApplication/firewall/create'),
+        deviceInternetAccess: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/operationApplication/deviceInternetAccess/create'),
+        maintenanceApply: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/assetsApply/maintenanceApply/create'),
+        receiveApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/assetsApply/receiveApplication/create'),
+        returnApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/assetsApply/returnApplication/create'),
+        scrappingApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/assetsApply/scrappingApplication/create'),
+        storageApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/assetsApply/storageApplication/create'),
+        maintenanceParts: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/partsApply/maintenanceApply/create'),
+        receiveParts: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/partsApply/receiveApplication/create'),
+        returnParts: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/partsApply/returnApplication/create'),
+        saleContractApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/saleContractApplication/create'),
+        saleContractChangeApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/saleContractChangeApplication/create'),
+        scrappingParts: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/partsApply/scrappingApplication/create'),
+        storageParts: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/partsApply/storageApplication/create'),
+        saleParts: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/partsApply/saleApply/create'),
+        purchaseParts: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/partsApply/purchaseApply/create'),
+        committeeProcurement: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/purchaseManage/generalPurchase/create'),
+        generalPurchase: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/purchaseManage/generalPurchase/create'),
+        contractReview: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/purchaseManage/contractReview/create'),
+        releaseBudget: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/purchaseManage/releaseBudget/create'),
+        onBusinessTrip: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/financialManagement/onBusinessTrip/create'),
+        cityTraffic: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/financialManagement/cityTraffic/create'),
+        entryWorkshop: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/personnelManage/entry/create'),
+        dimission: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/personnelManage/dimission/create'),
+        workOvertime: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/personnelManage/workOvertime/create'),
+        cardReplacement: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/personnelManage/cardReplacement/create'),
+        askForLeave: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/personnelManage/askForLeave/create'),
+        invoiceApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/invoiceApplication/create'),
+        saleOrderApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/saleOrderApplication/create'),
+        invoiceChangeApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/invoiceChangeApplication/create'),
+        purchaseApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/purchaseApplication/create'),
+        purchaseCommissionDecisionApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/purchaseCommissionDecisionApplication/create'),
+        miscellaneousCost: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/financialManagement/miscellaneousCost/create'),
+        subscriptionApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/subscriptionApplication/create'),
+        purchaseContractApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/purchaseContractApplication/create'),
+        trainingApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/personnelManage/trainingApplication/create'),
+        regularizationApply: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/personnelManage/regularizationApply/create'),
+        transferSalaryAndPost: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/personnelManage/transferSalaryAndPost/create'),
+        appOnline: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/operationApplication/appOnline/create'),
+        tspInterface: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/operationApplication/tspInterface/create'),
+        tspOnline: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/operationApplication/tspOnline/create'),
+        businessHospitality: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/financialManagement/businessHospitality/create'),
+        licensePurchaseContractApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/licensePurchaseContractApplication/create'),
+        bomPurchaseContractApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/bomPurchaseContractApplication/create'),
+        bomPurchaseOrderApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/bomPurchaseOrderApplication/create'),
+        unionFunds: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/financialManagement/unionFunds/create'),
+        acceptApply: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/acceptApply/create'),
+        generalContract: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/generalContract/create'),
+        purchaseContractPayApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/purchaseContractPayApplication/create'),
+        bomPurchaseContractPayApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/bomPurchaseContractPayApplication/create'),
+        budgetAdditions: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/budgetAdditions/create'),
+        invoiceApply: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/invoiceApply/create'),
+        employeeRenewal: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/personnelManage/employeeRenewal/create'),
+        internalTransfer: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/financialManagement/internalTransfer/create'),
+        invoiceUpdate: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/invoiceUpdate/create'),
+        scrapParts: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/warehouseApply/scrapParts/create'),
+        storageIn: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/warehouseApply/storageIn/create'),
+        bomPurchaseApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/bomPurchaseApplication/create'),
+        appOnline25: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/operationApplication/appLaunchApply25/create'),
+        doorAccessControl: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/doorAccessControl/create'),
+        storageOut: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/warehouseApply/storageOut/create'),
+        subStorageIn: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/warehouseApply/subStorageIn/create'),
+        subStorageOut: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/warehouseApply/subStorageOut/create'),
+        transferParts: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/partsApply/transferApplication/create'),
+        fieldApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/warehouseApply/fieldApplication/create'),
+        partsPriceMaintenance: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/partsPriceMaintenance/create'),
+        partsUpdateApply: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/partsUpdateApply/create'),
+        supplierOrderChange: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/supplierOrderChange/create'),
+        banknoteApply: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/banknoteApply/create'),
+        supplierOrderStatus: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/supplierOrderStatus/create'),
+        supplierOrderSend: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/supplierOrderSend/create'),
+        bomChangeApply: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/bomChangeApply/create'),
     },
 };
