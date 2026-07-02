@@ -128,16 +128,16 @@
 import { baseUrl, indexUrl } from "@/config/env";
 import { exportHtmlToDocx } from "@/util/wordDown";
 import AcceptApplyApi from "@/api/acceptApply/index";
-import logoBase64 from "../logoBase64";
 export default {
   data() {
     return {
       form: {},
-      imgUrl: "",
+      // logo 不再走 base64 嵌入：拆成 public/img/word-logo.png (103KB)，
+      // 浏览器走 HTTP 资源缓存复用，flow chunk 不再被这 100KB+ 字符串污染
+      imgUrl: `${baseUrl}/img/word-logo.png`,
     };
   },
   mounted() {
-    this.imgUrl = logoBase64;
   },
   props: {
     bomPurchaseContractForm: {},

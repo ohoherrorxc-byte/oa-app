@@ -112,16 +112,17 @@
 </template>
 
 <script>
+import { baseUrl } from "@/config/env";
 import { exportHtmlToDocx } from '@/util/wordDown'
 import { mixinsAmount } from '@/mixins/amount'
 import BomPurchaseOrderApplyApi from '@/api/bomPurchaseOrderApply/index'
-import logoBase64 from '../logoBase64'
 export default {
     data() {
         return {
             form: {
             },
-            imgUrl: ''
+            // logo 不再走 base64 嵌入：拆成 public/img/word-logo.png，浏览器走 HTTP 缓存复用
+            imgUrl: `${baseUrl}/img/word-logo.png`
         }
     },
     mixins: [ mixinsAmount],
@@ -132,7 +133,6 @@ export default {
         downModelTitle:{}
     },
     mounted() {
-        this.imgUrl = logoBase64
     },
     methods: {     
         init() {

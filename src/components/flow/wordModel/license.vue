@@ -138,19 +138,18 @@
 import { baseUrl, indexUrl } from "@/config/env";
 import { exportHtmlToDocx } from '@/util/wordDown'
 import BomPurchaseOrderApplyApi from '@/api/bomPurchaseOrderApply/index'
-import logoBase64 from '../logoBase64'
 import { mixinsAmount } from '@/mixins/amount'
 export default {
     data() {
         return {
             form: {
             },
-            imgUrl: ''
+            // logo 不再走 base64 嵌入：拆成 public/img/word-logo.png，浏览器走 HTTP 缓存复用
+            imgUrl: `${baseUrl}/img/word-logo.png`
         }
     },
     mixins: [mixinsAmount],
     mounted() {
-        this.imgUrl = logoBase64
     },
     props: {
         bomPurchaseContractForm: {
