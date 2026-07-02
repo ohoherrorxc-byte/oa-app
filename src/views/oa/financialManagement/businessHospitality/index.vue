@@ -1,5 +1,6 @@
 <template>
     <div>
+        <suspense>
         <flow ref="flowRef" approvalName="业务招待费用报销" @allTotalAmount="allTotalAmount" @getFormData="getFormData" :slotForm="form"
             :detailId="businessId" :processInstanceId="processInstanceId" componentTag="businessHospitality" :approvalSave="true">
             <template slot="baseInfo">
@@ -16,15 +17,24 @@
                 </el-form>
             </template>
         </flow>
+        <template #fallback>
+            <flow-skeleton />
+        </template>
+        </suspense>
     </div>
 </template>
 
 <script>
-import flow from '@/components/flow/index'
+// 异步加载 flow：第一次进入下载共享 flow chunk（webpackChunkName 固定为 "flow"），
+// 后续所有 flow 页面命中浏览器缓存秒进；加载期间显示 skeleton 占位
+import FlowSkeleton from '@/components/flow/FlowSkeleton'
 import { numberToTraditionalChinese } from '@/util/util'
 import { mapGetters } from 'vuex'
 export default {
-    components: { flow },
+    components: {
+        flow: () => import(/* webpackChunkName: "flow" */ '@/components/flow/index'),
+        FlowSkeleton
+    },
     data() {
         return {
             processInstanceId: "",

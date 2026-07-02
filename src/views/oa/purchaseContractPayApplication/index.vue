@@ -1,13 +1,23 @@
 <template>
     <div>
-        <flow approvalName="一般通用采购合同付款申请" :detailId="businessId" :processInstanceId="processInstanceId" componentTag="purchaseContractPayApplication" :showBaseInfo="false"></flow>
+        <suspense>
+            <flow approvalName="一般通用采购合同付款申请" :detailId="businessId" :processInstanceId="processInstanceId" componentTag="purchaseContractPayApplication" :showBaseInfo="false"></flow>
+            <template #fallback>
+                <flow-skeleton />
+            </template>
+        </suspense>
     </div>
 </template>
 
 <script>
-import flow from '@/components/flow/index'
+// 异步加载 flow：第一次进入下载共享 flow chunk（webpackChunkName 固定为 "flow"），
+// 后续所有 flow 页面命中浏览器缓存秒进；加载期间显示 skeleton 占位
+import FlowSkeleton from '@/components/flow/FlowSkeleton'
 export default {
-    components: { flow },
+    components: {
+        flow: () => import(/* webpackChunkName: "flow" */ '@/components/flow/index'),
+        FlowSkeleton
+    },
     data() {
         return {
             processInstanceId: "",
