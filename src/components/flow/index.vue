@@ -1232,10 +1232,15 @@ export default {
         } - ${getFormatDate()} - ${combinedObject.projectName}`;
       }
       console.log(this.componentTag + "this.componentTag");
-      let fn =
-        key === "save"
-          ? TemporarySaveOperate[this.componentTag] //暂存即现在的保存
-          : SaveOperate[this.componentTag]; //保存即现在的提交
+      // 提交 / 暂存对应的 API handler 改为按需 dynamic import：
+      // 原本 SaveOperate[this.componentTag] 会让 save.js (499 行) 整块 static 进 flow chunk，
+      // 现在按 tag 加载，flow 启动时 save.js / temporarySave.js 0 加载
+      let fn;
+      if (key === "save") {
+        fn = await TemporarySaveOperate.get(this.componentTag); // 暂存即现在的保存
+      } else {
+        fn = await SaveOperate.get(this.componentTag); // 保存即现在的提交
+      }
       //暂存信息不走向流程，需要提交了才能进入流程模块
       this.loading = true;
       try {

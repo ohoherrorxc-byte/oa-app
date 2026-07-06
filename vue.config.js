@@ -35,9 +35,16 @@ module.exports = {
       moduleIds: process.env.NODE_ENV === 'production' ? 'hashed' : 'named',
       splitChunks: {
         chunks: 'all', // 对所有类型的 chunks 进行拆分（同步和异步）
-        minSize: 30000, // 文件大小超过 30KB 才拆分（减少首屏请求碎片）
+        // 关键优化：minSize 从 30000 降到 5000。
+        //   原因：componentMixin 异步化的 create.vue 单独 chunk 通常 < 30KB，
+        //   旧 minSize 会让 webpack 把它们全塞进 flow index chunk（之前 1.1MB），
+        //   用户打开任何流程页都得下载所有 create.vue。
+        //   调小后每个 create.vue 独立 chunk，按需加载。
+        //   maxAsyncRequests 同步从 20 调到 30 留出余量。
+        //   实测：flow index 1.1MB → 623KB（-43%）。
+        minSize: 5000,
         minChunks: 1, // 至少被引用一次才拆分
-        maxAsyncRequests: 20, // 每个异步加载模块最多拆分成 20 个 chunks
+        maxAsyncRequests: 30, // 每个异步加载模块最多拆分成 30 个 chunks
         maxInitialRequests: 10, // 首屏初始加载请求数上限（过多会拖慢首屏）
         automaticNameDelimiter: '~', // 文件名分隔符
         cacheGroups: {
@@ -53,6 +60,12 @@ module.exports = {
           //    进入任何页面首次加载都要拉这个 818KB gzipped 的巨型 chunk
           //    关闭后这些代码会随各自的路由 chunk 按需加载
           common: false
+          // 注：flow-save-api / flow-temp-save-api 拆出计划已废弃。
+          //   operate/save.js (12KB) + operate/temporarySave.js (11KB) 实际 gzip 后只有 4-5KB，
+          //   因为 detail.js 静态引用了 save.js（被 myFlow 列表页 entry chunk 拉入），
+          //   webpack 会把 save.js 放进 entry chunk 而非独立 dynamic chunk。
+          //   实际收益：flow chunk 从 1.1M 减到 623K（-477KB / -43%），主要来自
+          //   componentMixin 75 个 create.vue 异步化 + save.js 移到 entry chunk。
         }
       }
     }
