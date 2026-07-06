@@ -56,6 +56,7 @@ export const mixins = {
         unionFunds: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/financialManagement/unionFunds/create'),
         acceptApply: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/acceptApply/create'),
         generalContract: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/generalContract/create'),
+        travelReimbursement: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/financialManagement/travelReimbursement/create'),
         purchaseContractPayApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/purchaseContractPayApplication/create'),
         bomPurchaseContractPayApplication: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/bomPurchaseContractPayApplication/create'),
         budgetAdditions: () => import(/* webpackChunkName: "flow-comp" */ '@/views/oa/budgetAdditions/create'),

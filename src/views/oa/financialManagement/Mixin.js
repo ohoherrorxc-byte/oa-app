@@ -101,9 +101,17 @@ export const mixins = {
         }
         this.getSubjectList()
         this.getCostList()
-        
+
         this.getSupplier()
-        this.$refs.form.clearValidate();
+        // 用 $nextTick 等 el-form 挂载后再清校验：
+        //   flow 把 create.vue 改成 async 加载（componentMixin 75 个异步化）后，
+        //   mounted 同步阶段 this.$refs.form 还未绑定到 el-form DOM，
+        //   同步调用 clearValidate() 会抛 "Cannot read property 'clearValidate' of undefined"，
+        //   错误上浮导致 create.vue 整个子树渲染失败，4 个 basic-container（预算/交通/住宿/补贴/其他费用）
+        //   全部塌掉只剩 baseInfo 同步组件正常显示。
+        this.$nextTick(() => {
+            this.$refs.form && this.$refs.form.clearValidate()
+        })
         this.form.budgetInfo = '可用预算:  0.00\n已发生费用:  0.00\n审批中费用:  0.00'
     },
     methods: {
